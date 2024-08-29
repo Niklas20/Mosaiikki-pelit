@@ -127,8 +127,9 @@ const GameScreen = (props: GameScreenProps) => {
             if (hintIndex < hints.length) {
                 addHint(newHint);
                 setHintIndex(hintIndex + 1);
-                setPoints(prevPoints => prevPoints - 200);
             }
+
+            setPoints(prevPoints => prevPoints - 200);
         }
     };
 
