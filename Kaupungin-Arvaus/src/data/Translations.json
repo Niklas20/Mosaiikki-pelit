@@ -28,8 +28,8 @@
         "en": "The game works as follows: you will be given a picture of a city and you have to guess which city it is."
     },
     "info-screen-text-3": {
-        "fi": "Voit valita monesta eri kaupungista minkä luulet olevan kyseessä.",
-        "en": "You can choose from many different cities which one you think it is."
+        "fi": "Voit valita 15 eri kaupungin joukosta minkä kaupungin luulet olevan kyseessä.",
+        "en": "You can choose from 15 different cities which one you think it is."
     },
     "info-screen-text-4": {
         "fi": "1. Klikkaa 'Aloita Peli' painiketta",
@@ -40,12 +40,12 @@
         "en": "2. Write and select the city you think it is"
     },
     "info-screen-text-6": {
-        "fi": "3. Jos vastasit oikein, saat pisteitä ja siirryt seuraavaan kuvaan, jos vastasit väärin, menetät pisteitä mutta saat vinkin.",
-        "en": "3. If you answered correctly, you will get points and move on to the next picture, if you answered incorrectly, you will lose points but get a hint."
+        "fi": "3. Kun vastaat oikein, siirryt loppu näyttöön.",
+        "en": "3. When you answer correctly, you will move to the end screen."
     },
     "info-screen-text-7": {
-        "fi": "4. Pelin lopussa näet kuinka monta pistettä sait.",
-        "en": "4. At the end of the game you will see how many points you got."
+        "fi": "4. Loppu näytössä näet kuinka monta pistettä sait, tietoa kaupungista ja voit aloittaa pelin uudestaan.",
+        "en": "4. In the end screen you will see how many points you got, information about the city and you can start the game again."
     },
     "info-screen-subtitle": {
         "fi": "Pelin kulku",
