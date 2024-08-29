@@ -1,0 +1,21 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+}
+
+.container
+{
+    box-shadow: inset rgba(0, 0, 0, 0.5) -3px -3px 5px, inset rgba(255, 255, 255, .9) 3px 3px 5px, rgba(0, 0, 0, 0.8) 3px 3px 5px -3px;
+    background-color: rgb(255, 255, 255);
+    outline: 2px dashed rgba(0, 0, 0, 0.055);
+    display: flex;
+    position: absolute;
+    height: 650px;
+    width: 700px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
