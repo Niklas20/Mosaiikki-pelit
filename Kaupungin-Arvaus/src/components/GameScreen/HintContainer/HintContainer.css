@@ -1,0 +1,15 @@
+.hint {
+    margin: 1rem;
+    padding: 1rem;
+    border: 1px solid white;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.hint-image {
+    width: 100%;
+    height: auto;
+}

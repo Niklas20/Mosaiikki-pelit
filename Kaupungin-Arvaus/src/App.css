@@ -1,0 +1,112 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+    font-family: Arial, Helvetica, sans-serif;
+
+    cursor: url('./imgs/cursor.png'), auto;
+}
+
+.container {
+    box-shadow: inset rgba(0, 0, 0, 0.5) -3px -3px 5px, inset rgba(255, 255, 255, .9) 3px 3px 5px, rgba(0, 0, 0, 0.8) 3px 3px 5px -3px;
+    background-color: rgb(255, 255, 255);
+    outline: 2px dashed rgba(0, 0, 0, 0.055);
+    display: flex;
+    position: absolute;
+    height: 650px;
+    width: 700px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-image: url(./imgs/background.jpg);
+}
+
+.screen {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    box-shadow: inset rgba(0, 0, 0, 0.5) -3px -3px 5px, inset rgba(255, 255, 255, 0.8) 3px 3px 5px, rgba(0, 0, 0, 0.7) 3px 3px 5px -3px;
+}
+
+.buttons-container {
+    position: absolute;
+    right: 10px;
+    top: 5px;
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+}
+
+.exit-button,
+.motive-button,
+.info-button,
+.language-button-fi,
+.language-button-en {
+    background-color: transparent;
+    height: 32px;
+    width: 32px;
+    border: none;
+}
+
+.exit-button:hover,
+.motive-button:hover,
+.info-button:hover,
+.language-button-fi:hover,
+.language-button-en:hover {
+    transform: scale(1.1);
+    cursor: url("./imgs/pointer.png"), pointer;
+}
+
+.exit-button:disabled,
+.motive-button:disabled,
+.info-button:disabled,
+.language-button-fi:disabled,
+.language-button-en:disabled {
+    cursor: not-allowed;
+    transform: none;
+}
+
+.big-button-container {
+    position: fixed;
+    top: 52%;
+    right: 8.5%;
+}
+
+.big-language-button-fi,
+.big-language-button-en {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 220px;
+    height: 90px;
+    border: none;
+    border-radius: 12px;
+    background-color: #f0f0f0;
+    margin: 15px 0;
+    font-size: 20px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+    color: #ff6347;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.big-language-button-fi span,
+.big-language-button-en span {
+    cursor: url("./imgs/pointer.png"), pointer;
+}
+
+.big-language-button-fi:hover,
+.big-language-button-en:hover {
+    transform: scale(1.05);
+    background-color: #e0e0e0;
+    cursor: url("./imgs/pointer.png"), pointer;
+}
+
+.big-language-button-selected {
+    border: 2px solid #ff6347;
+}

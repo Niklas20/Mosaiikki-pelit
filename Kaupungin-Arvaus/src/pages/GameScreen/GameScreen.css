@@ -1,0 +1,220 @@
+.game-screen-title {
+    font-size: 2rem;
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.game-screen-search-bar {
+    position: absolute;
+    border: 1px solid black;
+    border-radius: 5px;
+    right: 5%;
+    bottom: 2%;
+    height: 290px;
+    width: 250px;
+    overflow-y: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+
+.game-screen-search-bar input {
+    width: 100%;
+    height: 50px;
+    font-size: 1.5rem;
+    text-align: center;
+    border: none;
+    border-bottom: 1px solid white;
+    background-color: transparent;
+    color: white;
+}
+
+.game-screen-search-bar input:focus {
+    outline: none;
+}
+
+.letter-container {
+    position: absolute;
+    left: 50%;
+    top: 6%;
+    transform: translateX(-50%);
+    color: white;
+    display: flex;
+    font-size: 3rem;
+    filter: drop-shadow(1px 1px 2px hsl(0, 0%, 8%));
+    z-index: 1;
+}
+
+.letter {
+    margin: 0 10px;
+
+    filter: drop-shadow(1px 1px 2px hsl(0, 0%, 8%));
+}
+
+.game-screen-hint-container {
+    position: absolute;
+    left: 5%;
+    bottom: 2%;
+    color: #fff;
+    border: 3px solid white;
+    border-radius: 5px;
+    width: 350px;
+    height: 290px;
+    text-align: center;
+    justify-content: center;
+    overflow-y: auto;
+}
+
+.game-screen-hint-container h3 {
+    font-size: 2rem;
+    margin-top: 0.5rem;
+    text-decoration: underline;
+}
+
+.game-screen-points {
+    position: absolute;
+    right: 6%;
+    top: 45%;
+    color: white;
+    font-size: 2.5rem;
+
+    filter: drop-shadow(1px 1px 2px hsl(0, 0%, 8%));
+}
+
+.game-screen-image-container {
+    position: absolute;
+    transform: translateX(-50%);
+    top: 6%;
+    left: 50%;
+}
+
+.game-screen-image {
+    position: relative;
+
+    width: 630px;
+    height: 300px;
+
+    border: 2px solid transparent;
+    /* Make the border itself transparent */
+    border-image: linear-gradient(180deg, rgb(0, 174, 255), rgb(70, 255, 70)) 1;
+
+    background-size: contain;
+    background-position: center;
+
+    z-index: 0;
+
+    transition: filter 0.3s ease, opacity 0.3s ease;
+}
+
+.full-screen-image {
+    position: absolute;
+    transform: translateX(-50%);
+    left: 50%;
+    top: 10%;
+
+    width: 680px;
+    height: 450px;
+
+    border: 2px solid black;
+
+    background-size: contain;
+    background-position: center;
+}
+
+.game-screen-magnify {
+    position: absolute;
+    transform: translateX(-50%);
+    left: 50%;
+    top: 30%;
+
+    width: 100px;
+    height: 100px;
+
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 3;
+}
+
+.game-screen-image-container:hover .game-screen-magnify {
+    opacity: 1;
+    cursor: url("../../imgs/pointer.png"), pointer;
+}
+
+.game-screen-image-container:hover .game-screen-image {
+    filter: brightness(0.5);
+    cursor: url("../../imgs/pointer.png"), pointer;
+}
+
+.game-screen-close-button {
+    position: absolute;
+    left: 37%;
+    bottom: 5%;
+    width: 200px;
+
+    box-shadow: inset 1px 39px 16px -12px #9fb4f2;
+    background-color: #7892c2;
+    border-radius: 10px;
+    border: 2px solid #4e6096;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    font-family: Arial;
+    font-size: 22px;
+    padding: 24px 24px;
+    text-decoration: none;
+    text-shadow: 2px 2px 1px #283966;
+}
+
+.game-screen-close-button:hover {
+    background-color: #476e9e;
+    position: absolute;
+    transform: scale(0.95);
+
+    cursor: url("../../imgs/pointer.png"), pointer;
+}
+
+.game-screen-close-button:active {
+    position: absolute;
+    bottom: 4%;
+}
+
+.game-screen-hint-button {
+    background-color: transparent;
+    width: 32px;
+    height: 32px;
+    border: none;
+}
+
+.game-screen-hint-button:hover {
+    transform: scale(1.1);
+
+    cursor: url("../../imgs/pointer.png"), pointer;
+}
+
+.game-screen-hint-button:active {
+    top: 7.5%;
+}
+
+.game-screen-hint-button:disabled {
+    cursor: not-allowed;
+    transform: none;
+}
+
+.game-screen-hint-button-container {
+    position: absolute;
+    top: 7%;
+    left: 88%;
+    z-index: 3;
+}
+
+.game-screen-timer {
+    position: absolute;
+    transform: translateX(-50%);
+    left: 52%;
+    top: 1.8%;
+    scale: 2;
+
+    background: linear-gradient(to right, #fbff00, #ff6600);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}

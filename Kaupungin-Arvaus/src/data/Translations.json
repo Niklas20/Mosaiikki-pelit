@@ -1,0 +1,186 @@
+{
+    "main-screen-title": {
+        "fi": "Kaupungin Arvaus Peli",
+        "en": "City Guessing Game"
+    },
+    "main-screen-button": {
+        "fi": "Aloita peli",
+        "en": "Start game"
+    },
+    "main-screen-big-language-button-fi": {
+        "fi": "Suomi",
+        "en": "Finnish"
+    },
+    "main-screen-big-language-button-en": {
+        "fi": "Englanti",
+        "en": "English"
+    },
+    "info-screen-title": {
+        "fi": "Ohjeet",
+        "en": "Instructions"
+    },
+    "info-screen-text-1": {
+        "fi": "Tervetuloa pelaamaan kaupungin arvaus peliä!",
+        "en": "Welcome to the city guessing game!"
+    },
+    "info-screen-text-2": {
+        "fi": "Peli toimii seuraavasti: sinulle annetaan kuva kaupungista ja sinun tulee arvata mikä kaupunki on kyseessä.",
+        "en": "The game works as follows: you will be given a picture of a city and you have to guess which city it is."
+    },
+    "info-screen-text-3": {
+        "fi": "Voit valita monesta eri kaupungista minkä luulet olevan kyseessä.",
+        "en": "You can choose from many different cities which one you think it is."
+    },
+    "info-screen-text-4": {
+        "fi": "1. Klikkaa 'Aloita Peli' painiketta",
+        "en": "1. Click the 'Start Game' button"
+    },
+    "info-screen-text-5": {
+        "fi": "2. Kirjoita ja valitse kaupunki jonka luulet olevan kyseessä",
+        "en": "2. Write and select the city you think it is"
+    },
+    "info-screen-text-6": {
+        "fi": "3. Jos vastasit oikein, saat pisteitä ja siirryt seuraavaan kuvaan, jos vastasit väärin, menetät pisteitä mutta saat vinkin.",
+        "en": "3. If you answered correctly, you will get points and move on to the next picture, if you answered incorrectly, you will lose points but get a hint."
+    },
+    "info-screen-text-7": {
+        "fi": "4. Pelin lopussa näet kuinka monta pistettä sait.",
+        "en": "4. At the end of the game you will see how many points you got."
+    },
+    "info-screen-subtitle": {
+        "fi": "Pelin kulku",
+        "en": "Game flow"
+    },
+    "info-screen-button": {
+        "fi": "Aloita peli",
+        "en": "Start game"
+    },
+    "hint-population": {
+        "fi": "Kaupungissa asuu {population} ihmistä",
+        "en": "The city has a population of {population}"
+    },
+    "hint-founded": {
+        "fi": "Kaupunki on perustettu vuonna {founded}",
+        "en": "The city was founded in {founded}"
+    },
+    "hint-size": {
+        "fi": "Kaupungin pinta-ala on {size}",
+        "en": "The city's area is {size}"
+    },
+    "hint-image": {
+        "fi": "Kaupunki sijaitsee suomessa täällä:",
+        "en": "The city is located in Finland here:"
+    },
+    "hint-new-letter": {
+        "fi": "Uusi kirjain: {letter}",
+        "en": "New letter: {letter}"
+    },
+    "game-screen-close-button": {
+        "fi": "Poistu",
+        "en": "Exit"
+    },
+    "game-screen-points": {
+        "fi": "Pisteet: {points}",
+        "en": "Points: {points}"
+    },
+    "loading-screen-text": {
+        "fi": "Ladataan...",
+        "en": "Loading..."
+    },
+    "motive-screen-title": {
+        "fi": "Motiivi",
+        "en": "Motive"
+    },
+    "motive-screen-text-1": {
+        "fi": "Teimme tämän pelin, koska haluamme auttaa sinua oppimaan uutta suomen kaupungeista.",
+        "en": "We made this game because we want to help you learn new things about Finnish cities."
+    },
+    "motive-screen-text-2": {
+        "fi": "Pelin avulla opit tunnistamaan kaupunkeja ja niiden ominaisuuksia. Myös tulet oppimaan suomea!",
+        "en": "The game will help you recognize cities and their characteristics. You will also learn Finnish!"
+    },
+    "motive-screen-text-3": {
+        "fi": "Peli on tehty 2024 syksyllä, ja se on tehty Gradian opiskelijoiden toimesta.",
+        "en": "The game was made in the fall of 2024 and was made by students of Gradia."
+    },
+    "motive-screen-button": {
+        "fi": "Sulje",
+        "en": "Close"
+    },
+    "end-screen-title": {
+        "fi": "Pelin Loppu!",
+        "en": "End of the Game!"
+    },
+    "end-screen-points": {
+        "fi": "Pisteet: {points}",
+        "en": "Points: {points}"
+    },
+    "end-screen-city": {
+        "fi": "Kaupunki: {city}",
+        "en": "City: {city}"
+    },
+    "end-screen-restart-button": {
+        "fi": "Pelaa Uudestaan",
+        "en": "Play Again"
+    },
+    "end-screen-time": {
+        "fi": "Aika: {time}",
+        "en": "Time: {time}"
+    },
+    "author-title": {
+        "fi": "Tekijät",
+        "en": "Authors"
+    },
+    "hint-container-title": {
+        "fi": "Vinkit",
+        "en": "Hints"
+    },
+    "no-results": {
+        "fi": "Ei tuloksia",
+        "en": "No results"
+    },
+    "game-screen-search-bar-placeholder": {
+        "fi": "Etsi kaupunkia...",
+        "en": "Search for city..."
+    },
+    "author-popup-school": {
+        "fi": "Koulu: {school}",
+        "en": "School: {school}"
+    },
+    "author-popup-degree": {
+        "fi": "Tutkinto: {degree}",
+        "en": "Degree: {degree}"
+    },
+    "author-popup-email": {
+        "fi": "Sähköposti: {email}",
+        "en": "Email: {email}"
+    },
+    "tooltip-motive": {
+        "fi": "Motiivi",
+        "en": "Motive"
+    },
+    "tooltip-info": {
+        "fi": "Ohjeet",
+        "en": "Instructions"
+    },
+    "tooltip-exit": {
+        "fi": "Poistu",
+        "en": "Exit"
+    },
+    "tooltip-language-fi": {
+        "fi": "Suomi",
+        "en": "Finnish"
+    },
+    "tooltip-language-en": {
+        "fi": "Englanti",
+        "en": "English"
+    },
+    "tooltip-hint": {
+        "fi": "Vihje\n(-150 pistettä)",
+        "en": "Hint\n(-150 points)"
+    },
+    "hints-left": {
+        "fi": "Vihjettä jäljellä",
+        "en": "Hints left"
+    }
+}

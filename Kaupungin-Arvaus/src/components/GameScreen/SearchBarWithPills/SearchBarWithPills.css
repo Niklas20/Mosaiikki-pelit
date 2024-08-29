@@ -1,0 +1,59 @@
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+::-webkit-scrollbar-thumb:active {
+    background: #333;
+}
+
+.pill {
+    margin: 1rem;
+    padding: 1rem;
+    border: 1px solid white;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    font-size: 1.5rem;
+    text-align: center;
+    cursor: url("../../../imgs/pointer.png"), pointer;
+}
+
+.pill:hover {
+    background-color: gray;
+    cursor: url("../../../imgs/pointer.png"), pointer;
+}
+
+.pill-disabled {
+    cursor: not-allowed;
+    background-color: gray;
+
+    &:hover {
+        cursor: not-allowed;
+    }
+}
+
+.no-results {
+    text-align: center;
+    color: red;
+    font-weight: bold;
+    font-size: 1.5rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+}
