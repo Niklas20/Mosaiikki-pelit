@@ -41,6 +41,7 @@ const GameScreen = (props: GameScreenProps) => {
     } = useGame();
 
     const initialized = useRef(false);
+    const [hints, setHints] = useState<Hint[]>([]); // Initialize hints state
     const [showImageScreen, setShowImageScreen] = useState(false);
     const maxHints = 3;
     const timerRef = useRef<NodeJS.Timeout | null>(null);
@@ -92,12 +93,12 @@ const GameScreen = (props: GameScreenProps) => {
             const timeout = setTimeout(() => {
                 resetGameState();
                 resetGame();
-                navigate("/end", { state: { points: Math.max(points, 0), city, timeElapsed } });
+                navigate("/end", { state: { points: Math.max(points, 0), city, timeElapsed, hints } });
             }, 2000);
 
             return () => clearTimeout(timeout);
         }
-    }, [revealedLetters, points, city, navigate, timeElapsed, endGame, resetGameState, resetGame]);
+    }, [revealedLetters, points, city, navigate, timeElapsed, endGame, resetGameState, resetGame, hints]);
 
     const handleCitySelect = (selectedCity: City) => {
         if (selectedCity.name !== city?.name) {
@@ -126,6 +127,7 @@ const GameScreen = (props: GameScreenProps) => {
 
             if (hintIndex < hints.length) {
                 addHint(newHint);
+                setHints(prevHints => [...prevHints, newHint]);
                 setHintIndex(hintIndex + 1);
             }
 
@@ -178,7 +180,7 @@ const GameScreen = (props: GameScreenProps) => {
                     hint: translate("hint-new-letter", { letter: cityLetters[randomIndex] })
                 };
                 addHint(newHint);
-
+                setHints(prevHints => [...prevHints, newHint]);
                 setHintsUsed(prevHintsUsed => prevHintsUsed + 1); // Increment hint counter
                 setPoints(prevPoints => prevPoints - 150); // Remove points
             } else {
@@ -246,6 +248,7 @@ const GameScreen = (props: GameScreenProps) => {
 
                 <HintContainer
                     className="game-screen-hint-container"
+                    hints={hints}
                 />
 
                 <SearchBarWithPills

@@ -4,6 +4,7 @@ import { useState } from "react";
 import authorData from "@/data/AuthorData.json";
 import AuthorPopup from "@/components/EndScreen/AuthorPopup/AuthorPopup";
 import { useTranslate } from "@/Utils/translate";
+import HintContainer from "@/components/GameScreen/HintContainer/HintContainer";
 
 /**
  * End screen component
@@ -21,6 +22,7 @@ const EndScreen = () => {
     const points = location.state?.points;
     const city = location.state?.city;
     const timeElapsed = location.state?.timeElapsed;
+    const hints = location.state?.hints || [];  // Get hints from location state
 
     const handleButtonClick = () => {
         navigate("/game");
@@ -46,6 +48,12 @@ const EndScreen = () => {
             <h3 className="end-screen-time">{translate("end-screen-time", { time: formatTime(timeElapsed) })}</h3>
             <h2 className="end-screen-points">{translate("end-screen-points", { points: points })}</h2>
             <h3 className="end-screen-city">{translate("end-screen-city", { city: city.name })}</h3>
+
+            <HintContainer
+                className="end-screen-hint-container"
+                hints={hints}
+            />
+
             <button
                 className="end-screen-restart-button"
                 onClick={handleButtonClick}

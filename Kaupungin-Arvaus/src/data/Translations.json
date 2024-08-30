@@ -109,7 +109,7 @@
     },
     "end-screen-title": {
         "fi": "Pelin Loppu!",
-        "en": "End of the Game!"
+        "en": "Game Over!"
     },
     "end-screen-points": {
         "fi": "Pisteet: {points}",
