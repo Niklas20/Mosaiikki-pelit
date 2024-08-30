@@ -70,7 +70,9 @@ const GameScreen = (props: GameScreenProps) => {
 
             setTimeElapsed(0);
         }
+    }, [city, setCity, setRevealedLetters]);
 
+    useEffect(() => {
         if (timerRef.current) clearInterval(timerRef.current);
 
         timerRef.current = setInterval(() => {
@@ -78,9 +80,7 @@ const GameScreen = (props: GameScreenProps) => {
         }, 1000);
 
         return () => {
-            if (timerRef.current) {
-                clearInterval(timerRef.current);
-            }
+            if (timerRef.current) clearInterval(timerRef.current);
         };
     }, []);
 
@@ -98,7 +98,7 @@ const GameScreen = (props: GameScreenProps) => {
 
             return () => clearTimeout(timeout);
         }
-    }, [revealedLetters, points, city, navigate, timeElapsed, hints]);
+    }, [revealedLetters, points, city, navigate, timeElapsed, endGame, resetGameState, resetGame, hints]);
 
     const handleCitySelect = (selectedCity: City) => {
         if (selectedCity.name !== city?.name) {
@@ -129,8 +129,9 @@ const GameScreen = (props: GameScreenProps) => {
                 addHint(newHint);
                 setHints(prevHints => [...prevHints, newHint]);
                 setHintIndex(hintIndex + 1);
-                setPoints(prevPoints => prevPoints - 200);
             }
+
+            setPoints(prevPoints => prevPoints - 200);
         }
     };
 

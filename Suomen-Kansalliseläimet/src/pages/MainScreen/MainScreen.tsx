@@ -1,6 +1,6 @@
 const MainScreen = () => {
     return (
-        <div>
+        <div className="screen">
             <h1>Main Screen WIP...</h1>
         </div>
     )
