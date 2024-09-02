@@ -4,6 +4,7 @@
             "name": "Helsinki",
             "image": "/src/imgs/gameImgs/Helsinki.jpg",
             "estimate_image": "/src/imgs/estimateImgs/helsinki_estimate.png",
+            "coa": "/src/imgs/vaakunaImgs/Tempvaakuna.jpg",
             "founded": 1550,
             "size": "715,48 km²",
             "population": 674500
@@ -12,6 +13,7 @@
             "name": "Espoo",
             "image": "/src/imgs/gameImgs/Espoo.jpg",
             "estimate_image": "/src/imgs/estimateImgs/espoo_estimate.png",
+            "coa": "/src/imgs/vaakunaImgs/Tempvaakuna.jpg",
             "founded": 1458,
             "size": "528,03 km²",
             "population": 314024
@@ -20,6 +22,7 @@
             "name": "Tampere",
             "image": "/src/imgs/gameImgs/Tampere.jpg",
             "estimate_image": "/src/imgs/estimateImgs/tampere_estimate.png",
+            "coa": "/src/imgs/vaakunaImgs/Tempvaakuna.jpg",
             "founded": 1779,
             "size": "689,59 km²",
             "population": 255050
@@ -28,6 +31,7 @@
             "name": "Vantaa",
             "image": "/src/imgs/gameImgs/Vantaa.jpg",
             "estimate_image": "/src/imgs/estimateImgs/vantaa_estimate.png",
+            "coa": "/src/imgs/vaakunaImgs/Tempvaakuna.jpg",
             "founded": 1972,
             "size": "240,35 km²",
             "population": 247443
@@ -36,6 +40,7 @@
             "name": "Oulu",
             "image": "/src/imgs/gameImgs/Oulu1.jpg",
             "estimate_image": "/src/imgs/estimateImgs/oulu_estimate.png",
+            "coa": "/src/imgs/vaakunaImgs/Tempvaakuna.jpg",
             "founded": 1605,
             "size": "3 817,52 km²",
             "population": 214633
@@ -44,6 +49,7 @@
             "name": "Turku",
             "image": "/src/imgs/gameImgs/Turku.jpg",
             "estimate_image": "/src/imgs/estimateImgs/turku_estimate.png",
+            "coa": "/src/imgs/vaakunaImgs/Tempvaakuna.jpg",
             "founded": 1229,
             "size": "245,67 km²",
             "population": 201863
@@ -52,6 +58,7 @@
             "name": "Jyväskylä",
             "image": "/src/imgs/gameImgs/Jyvaskyla.jpg",
             "estimate_image": "/src/imgs/estimateImgs/jyvaskyla_estimate.png",
+            "coa": "/src/imgs/vaakunaImgs/Tempvaakuna.jpg",
             "founded": 1837,
             "size": "1 176,48 km²",
             "population": 147746
@@ -60,6 +67,7 @@
             "name": "Kuopio",
             "image": "/src/imgs/gameImgs/Kuopio.jpg",
             "estimate_image": "/src/imgs/estimateImgs/kuopio_estimate.png",
+            "coa": "/src/imgs/vaakunaImgs/Tempvaakuna.jpg",
             "founded": 1775,
             "size": "432,35 km²",
             "population": 124021
@@ -68,6 +76,7 @@
             "name": "Lahti",
             "image": "/src/imgs/gameImgs/Lahti.jpg",
             "estimate_image": "/src/imgs/estimateImgs/lahti_estimate.png",
+            "coa": "/src/imgs/vaakunaImgs/Tempvaakuna.jpg",
             "founded": 1905,
             "size": "135,02 km²",
             "population": 120693
@@ -76,6 +85,7 @@
             "name": "Pori",
             "image": "/src/imgs/gameImgs/Pori.jpg",
             "estimate_image": "/src/imgs/estimateImgs/pori_estimate.png",
+            "coa": "/src/imgs/vaakunaImgs/Tempvaakuna.jpg",
             "founded": 1558,
             "size": "135,33 km²",
             "population": 83106
@@ -84,6 +94,7 @@
             "name": "Hämeenlinna",
             "image": "/src/imgs/gameImgs/Hameenlinna.jpg",
             "estimate_image": "/src/imgs/estimateImgs/hameenlinna_estimate.png",
+            "coa": "/src/imgs/vaakunaImgs/Tempvaakuna.jpg",
             "founded": 1639,
             "size": "2 032 km²",
             "population": 67774
@@ -92,6 +103,7 @@
             "name": "Mikkeli",
             "image": "/src/imgs/gameImgs/Mikkeli.jpg",
             "estimate_image": "/src/imgs/estimateImgs/mikkeli_estimate.png",
+            "coa": "/src/imgs/vaakunaImgs/Tempvaakuna.jpg",
             "founded": 1831,
             "size": "3 229 km2",
             "population": 51919
@@ -100,6 +112,7 @@
             "name": "Porvoo",
             "image": "/src/imgs/gameImgs/Porvoo.jpg",
             "estimate_image": "/src/imgs/estimateImgs/porvoo_estimate.png",
+            "coa": "/src/imgs/vaakunaImgs/Tempvaakuna.jpg",
             "founded": 1380,
             "size": "2 139,82 km²",
             "population": 51289
@@ -108,6 +121,7 @@
             "name": "Rovaniemi",
             "image": "/src/imgs/gameImgs/Rovaniemi.jpg",
             "estimate_image": "/src/imgs/estimateImgs/rovaniemi_estimate.png",
+            "coa": "/src/imgs/vaakunaImgs/Tempvaakuna.jpg",
             "founded": 1929,
             "size": "8 016,62 km²",
             "population": 63286
@@ -116,6 +130,7 @@
             "name": "Vaasa",
             "image": "/src/imgs/gameImgs/Vaasa.jpg",
             "estimate_image": "/src/imgs/estimateImgs/vaasa_estimate.png",
+            "coa": "/src/imgs/vaakunaImgs/Tempvaakuna.jpg",
             "founded": 1606,
             "size": "575,13 km²",
             "population": 68956

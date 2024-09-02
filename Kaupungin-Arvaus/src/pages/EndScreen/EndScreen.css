@@ -167,3 +167,12 @@
     margin-top: 0.5rem;
     text-decoration: underline;
 }
+
+.end-screen-coa {
+    position: absolute;
+    width: 230px;
+    height: 230px;
+
+    right: 1%;
+    top: 16%;
+}

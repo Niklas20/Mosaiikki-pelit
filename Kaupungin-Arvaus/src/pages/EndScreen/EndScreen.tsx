@@ -6,11 +6,6 @@ import AuthorPopup from "@/components/EndScreen/AuthorPopup/AuthorPopup";
 import { useTranslate } from "@/Utils/translate";
 import HintContainer from "@/components/GameScreen/HintContainer/HintContainer";
 
-/**
- * End screen component
- * 
- * @returns {JSX.Element} End screen component
- */
 const EndScreen = () => {
     const [visibleAuthors, setVisibleAuthors] = useState<string | null>(null);
 
@@ -18,11 +13,10 @@ const EndScreen = () => {
     const location = useLocation();
     const translate = useTranslate();
 
-    // Get points and city from location state
     const points = location.state?.points;
     const city = location.state?.city;
     const timeElapsed = location.state?.timeElapsed;
-    const hints = location.state?.hints || [];  // Get hints from location state
+    const hints = location.state?.hints || [];  
 
     const handleButtonClick = () => {
         navigate("/game");
@@ -42,12 +36,29 @@ const EndScreen = () => {
         return `${minutes}:${seconds < 10 ? `0${seconds}` : seconds}`;
     };
 
+    const getCityCOA = (coaPath: string) => {
+        try {
+            return require(`${coaPath}`);
+        } catch (err) {
+            console.error(`Could not load image in path: ${coaPath}`, err);
+            return null;
+        }
+    };
+
     return (
         <div className="screen end-screen">
             <h1 className="end-screen-title">{translate("end-screen-title")}</h1>
             <h3 className="end-screen-time">{translate("end-screen-time", { time: formatTime(timeElapsed) })}</h3>
             <h2 className="end-screen-points">{translate("end-screen-points", { points: points })}</h2>
             <h3 className="end-screen-city">{translate("end-screen-city", { city: city.name })}</h3>
+
+            {city?.coa && (
+                <img
+                    className="end-screen-coa"
+                    src="/src/imgs/vaakunaImgs/Tempvaakuna.jpg"
+                    alt={`${city.name} Coat of Arms`}
+                />
+            )}
 
             <HintContainer
                 className="end-screen-hint-container"
