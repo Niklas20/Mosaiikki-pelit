@@ -1,6 +1,8 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Layout from "./components/Layout/Layout";
 import MainScreen from "./pages/MainScreen/MainScreen";
+import EndScreen from "./pages/EndScreen/EndScreen";
+import GameScreen from "./pages/GameScreen/GameScreen";
 
 const Router = () => {
 
@@ -10,6 +12,8 @@ const Router = () => {
             element: <Layout />,
             children: [
                 { path: '/', element: <MainScreen /> },
+                { path: '/end', element: <EndScreen /> },
+                { path: '/game', element: <GameScreen /> },
             ]
         }
     ]);
