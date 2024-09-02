@@ -1,0 +1,90 @@
+.buttons-container
+{
+    position: absolute;
+    right: 10px;
+    top: 5px;
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+}
+
+.exit-button,
+.motive-button,
+.info-button,
+.language-button-fi,
+.language-button-en
+{
+    background-color: transparent;
+    height: 32px;
+    width: 32px;
+    border: none;
+}
+
+.exit-button:hover,
+.motive-button:hover,
+.info-button:hover,
+.language-button-fi:hover,
+.language-button-en:hover
+{
+    transform: scale(1.1);
+    cursor: url("./imgs/pointer.png"), pointer;
+}
+
+.exit-button:disabled,
+.motive-button:disabled,
+.info-button:disabled,
+.language-button-fi:disabled,
+.language-button-en:disabled
+{
+    cursor: not-allowed;
+    transform: none;
+}
+
+.big-button-container
+{
+    position: fixed;
+    top: 52%;
+    right: 8.5%;
+}
+
+.big-language-button-fi,
+.big-language-button-en
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 220px;
+    height: 90px;
+    border: none;
+    border-radius: 12px;
+    background-color: #f0f0f0;
+    margin: 15px 0;
+    font-size: 20px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+    color: #ff6347;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.big-language-button-fi span,
+.big-language-button-en span
+{
+    cursor: url("./imgs/pointer.png"), pointer;
+}
+
+.big-language-button-fi:hover,
+.big-language-button-en:hover
+{
+    transform: scale(1.05);
+    background-color: #e0e0e0;
+    cursor: url("./imgs/pointer.png"), pointer;
+}
+
+.big-language-button-selected
+{
+    border: 2px solid #ff6347;
+}

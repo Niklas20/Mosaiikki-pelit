@@ -1,11 +1,14 @@
 import Router from "./Router"
 import './App.css'
+import { LanguageProvider } from "./contexts/LanguageProvider"
 
 const App = () => {
     return (
-        <div className="container">
-            <Router />
-        </div>
+        <LanguageProvider>
+            <div className="container">
+                <Router />
+            </div>
+        </LanguageProvider>
     )
 }
 
