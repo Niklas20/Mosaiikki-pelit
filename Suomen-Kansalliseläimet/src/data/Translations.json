@@ -2,5 +2,33 @@
     "main-screen-title": {
         "fi": "Suomen Kansalliseläimet",
         "en": "Finnish National Animals"
+    },
+    "main-screen-big-language-button-fi": {
+        "fi": "Suomi",
+        "en": "Finnish"
+    },
+    "main-screen-big-language-button-en": {
+        "fi": "Englanti",
+        "en": "English"
+    },
+    "tooltip-motive": {
+        "fi": "Motiivi",
+        "en": "Motive"
+    },
+    "tooltip-info": {
+        "fi": "Ohjeet",
+        "en": "Instructions"
+    },
+    "tooltip-exit": {
+        "fi": "Poistu",
+        "en": "Exit"
+    },
+    "tooltip-language-fi": {
+        "fi": "Suomi",
+        "en": "Finnish"
+    },
+    "tooltip-language-en": {
+        "fi": "Englanti",
+        "en": "English"
     }
 }
