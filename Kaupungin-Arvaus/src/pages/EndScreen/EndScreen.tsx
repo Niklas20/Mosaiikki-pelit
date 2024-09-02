@@ -55,7 +55,7 @@ const EndScreen = () => {
             {city?.coa && (
                 <img
                     className="end-screen-coa"
-                    src="/src/imgs/vaakunaImgs/Tempvaakuna.jpg"
+                    src={city.coa}
                     alt={`${city.name} Coat of Arms`}
                 />
             )}
