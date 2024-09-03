@@ -11,6 +11,10 @@
         "fi": "Englanti",
         "en": "English"
     },
+    "main-screen-button": {
+        "fi": "Aloita peli",
+        "en": "Start game"
+    },
     "tooltip-motive": {
         "fi": "Motiivi",
         "en": "Motive"
