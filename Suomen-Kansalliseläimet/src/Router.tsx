@@ -3,6 +3,7 @@ import Layout from "./components/Layout/Layout";
 import MainScreen from "./pages/MainScreen/MainScreen";
 import EndScreen from "./pages/EndScreen/EndScreen";
 import GameScreen from "./pages/GameScreen/GameScreen";
+import InfoScreen from "./pages/InfoScreen/InfoScreen";
 
 const Router = () => {
 
@@ -14,6 +15,7 @@ const Router = () => {
                 { path: '/', element: <MainScreen /> },
                 { path: '/end', element: <EndScreen /> },
                 { path: '/game', element: <GameScreen /> },
+                { path: '/info', element: <InfoScreen /> }
             ]
         }
     ]);
