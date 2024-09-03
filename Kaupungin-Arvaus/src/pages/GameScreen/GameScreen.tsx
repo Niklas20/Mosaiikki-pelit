@@ -108,37 +108,46 @@ const GameScreen = (props: GameScreenProps) => {
         }
     };
 
+    const generateCityHints = (city: City): Hint[] => {
+        return [
+            { hint: translate("hint-population", { population: city.population.toString() }) },
+            { hint: translate("hint-founded", { founded: city.founded.toString() }) },
+            { hint: translate("hint-size", { size: city.size }) },
+            { hint: translate("hint-image"), image: city.estimate_image }
+        ];
+    };
+    
+    const revealHint = (hint: Hint, currentIndex: number) => {
+        addHint(hint);
+        setHints(prevHints => [...prevHints, hint]);
+        setHintIndex(currentIndex + 1);
+    };
+    
     const handleWrongCitySelect = () => {
         if (city) {
-            const hints = [
-                translate("hint-population", { population: city.population.toString() }),
-                translate("hint-founded", { founded: city.founded.toString() }),
-                translate("hint-size", { size: city.size }),
-                translate("hint-image")
-            ];
-
-            const newHint: Hint = {
-                hint: hints[hintIndex],
-            };
-
-            if (hintIndex === hints.length - 1) {
-                newHint.image = city.estimate_image;
+            const allHints = generateCityHints(city);
+    
+            if (hintIndex < allHints.length) {
+                revealHint(allHints[hintIndex], hintIndex);
+                setPoints(prevPoints => prevPoints - 200);
             }
-
-            if (hintIndex < hints.length) {
-                addHint(newHint);
-                setHints(prevHints => [...prevHints, newHint]);
-                setHintIndex(hintIndex + 1);
-            }
-
-            setPoints(prevPoints => prevPoints - 200);
         }
     };
-
+    
     const handleRightCitySelect = () => {
         if (city) {
             const cityLetters = city.name.split("");
             setRevealedLetters(cityLetters);
+    
+            // Clear existing hints before revealing all hints for the correct city
+            setHints([]);
+            setHintIndex(0);
+    
+            const allHints = generateCityHints(city);
+    
+            allHints.forEach((hint, index) => {
+                revealHint(hint, index);
+            });
         }
     };
 

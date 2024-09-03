@@ -36,15 +36,6 @@ const EndScreen = () => {
         return `${minutes}:${seconds < 10 ? `0${seconds}` : seconds}`;
     };
 
-    const getCityCOA = (coaPath: string) => {
-        try {
-            return require(`${coaPath}`);
-        } catch (err) {
-            console.error(`Could not load image in path: ${coaPath}`, err);
-            return null;
-        }
-    };
-
     return (
         <div className="screen end-screen">
             <h1 className="end-screen-title">{translate("end-screen-title")}</h1>
