@@ -27,7 +27,7 @@
 .language-button-en:hover
 {
     transform: scale(1.1);
-    cursor: url("../../imgs/pointer.png"), pointer;
+    cursor: url("../../imgs/assets/pointer.png"), pointer;
 }
 
 .exit-button:disabled,
@@ -73,7 +73,7 @@
 .big-language-button-fi span,
 .big-language-button-en span
 {
-    cursor: url("../../imgs/pointer.png"), pointer;
+    cursor: url("../../imgs/assets/pointer.png"), pointer;
 }
 
 .big-language-button-fi:hover,
@@ -81,7 +81,7 @@
 {
     transform: scale(1.05);
     background-color: #e0e0e0;
-    cursor: url("../../imgs/pointer.png"), pointer;
+    cursor: url("../../imgs/assets/pointer.png"), pointer;
 }
 
 .big-language-button-selected

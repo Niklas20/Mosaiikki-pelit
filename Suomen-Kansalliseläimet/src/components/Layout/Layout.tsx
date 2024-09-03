@@ -4,13 +4,13 @@ import { useLanguage } from "../../contexts/LanguageProvider";
 import Tooltip from "../Tooltip/Tooltip";
 import Button from "../Button/Button";
 import { useTranslate } from "../../utils/translate";
-import exitButtonImage from "../../imgs/exitButton.png";
-import infoButtonImage from "../../imgs/infoButton.png";
-import motiveButtonImage from "../../imgs/motiveButton.png";
-import languageButtonFi from "../../imgs/finButton.png";
-import languageButtonEn from "../../imgs/engButton.png";
-import finnishFlag from "../../imgs/finnishFlag.jpg";
-import englishFlag from "../../imgs/englishFlag.jpg";
+import exitButtonImage from "../../imgs/buttons/exitButton.png";
+import infoButtonImage from "../../imgs/buttons/infoButton.png";
+import motiveButtonImage from "../../imgs/buttons/motiveButton.png";
+import languageButtonFi from "../../imgs/buttons/finButton.png";
+import languageButtonEn from "../../imgs/buttons/engButton.png";
+import finnishFlag from "../../imgs/buttons/finnishFlag.jpg";
+import englishFlag from "../../imgs/buttons/englishFlag.jpg";
 
 const Layout = () => {
     const navigate = useNavigate();
