@@ -25,3 +25,10 @@ export interface Author {
     github: string;
     linkedin: string;
 }
+
+export interface Animal {
+    id: number;
+    name: string;
+    image: string;
+    isFinnishNational: boolean;
+}

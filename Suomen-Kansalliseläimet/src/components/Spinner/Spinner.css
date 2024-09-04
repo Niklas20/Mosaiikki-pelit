@@ -1,0 +1,94 @@
+/* Spinner.css */
+
+.spinner-container
+{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    text-align: center;
+    overflow: hidden;
+}
+
+.item-wrapper
+{
+    position: relative;
+    width: 600px;
+    /* Adjust as needed */
+    height: 150px;
+    margin: 0 auto;
+    overflow: hidden;
+    border: 2px solid #000;
+}
+
+.items
+{
+    display: flex;
+    white-space: nowrap;
+    transition: transform 0.5s ease-out;
+}
+
+.item
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 150px;
+    width: 150px;
+    border: 1px solid #000;
+    flex-shrink: 0;
+}
+
+.item img
+{
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+}
+
+.indicator
+{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 2px;
+    height: 100%;
+    background-color: #ff0000;
+    transform: translateX(-50%);
+}
+
+.start-spin-button
+{
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 20px;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.start-spin-button:hover
+{
+    background-color: #333;
+}
+
+.start-spin-button:disabled
+{
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.result
+{
+    margin-top: 20px;
+}
+
+.result img
+{
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+}
