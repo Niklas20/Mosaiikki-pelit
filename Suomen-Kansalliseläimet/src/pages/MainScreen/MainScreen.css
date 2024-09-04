@@ -38,12 +38,12 @@
     position: absolute;
     transform: scale(0.95);
 
-    cursor: url("../../imgs/pointer.png"), pointer;
+    cursor: url("../../imgs/assets/pointer.png"), pointer;
 }
 
 .main-screen-button:active
 {
     position: absolute;
     transform: scale(0.9);
-    cursor: url("../../imgs/pointer.png"), pointer;
+    cursor: url("../../imgs/assets/pointer.png"), pointer;
 }
