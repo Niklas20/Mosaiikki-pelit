@@ -2,7 +2,7 @@
 {
     position: absolute;
 
-    font-size: 5rem;
+    font-size: 4.8rem;
     left: 2%;
     top: 0%;
 
@@ -40,7 +40,7 @@
 
 .end-screen-restart-button:hover
 {
-    background-color: #bb6a00;
+    background-color: #ff9100;
     position: absolute;
     transform: scale(0.95);
 
