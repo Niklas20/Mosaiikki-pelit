@@ -2,9 +2,9 @@
 {
     text-align: center;
     margin-top: 7%;
-    font-size: 3.6rem;
-    background: linear-gradient(90deg, #00ff80, #7daaff);
-    border: #00ff80;
+    font-size: 3.4rem;
+    background: linear-gradient(90deg, #ff9100, #fff5e6);
+    border: #532c00;
     border-radius: 2px;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -15,10 +15,10 @@
 
 .main-screen-button
 {
-    box-shadow: inset 1px 39px 16px -12px #9fb4f2;
-    background-color: #7892c2;
+    box-shadow: inset 1px 39px 16px -12px #ffbf6a;
+    background-color: #ff9100;
     border-radius: 10px;
-    border: 2px solid #4e6096;
+    border: 2px solid #fff5e6;
     display: inline-block;
     cursor: pointer;
     color: #ffffff;
@@ -26,7 +26,7 @@
     font-size: 30px;
     padding: 30px 65px;
     text-decoration: none;
-    text-shadow: 2px 2px 1px #283966;
+    text-shadow: 2px 2px 1px #744100;
     position: absolute;
     left: 57%;
     bottom: 50%;
@@ -34,7 +34,7 @@
 
 .main-screen-button:hover
 {
-    background-color: #476e9e;
+    background-color: #c77100;
     position: absolute;
     transform: scale(0.95);
 
