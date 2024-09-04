@@ -1,0 +1,85 @@
+.author-popup-overlay
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.author-popup
+{
+    background-color: #1e1e1e;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    max-width: 400px;
+    width: 100%;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    position: relative;
+}
+
+.author-popup-close
+{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 18px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.author-popup-close:hover
+{
+    color: #ff9100;
+    cursor: url("../../../imgs/assets/pointer.png"), pointer;
+}
+
+.author-popup h2
+{
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    background: linear-gradient(90deg, #ff9100, #fff5e6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    user-select: text;
+}
+
+.author-popup h2:hover
+{
+    cursor: text;
+}
+
+.author-popup p
+{
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    user-select: text;
+}
+
+.author-popup p:hover
+{
+    cursor: text;
+}
+
+.author-popup a
+{
+    color: #ff9100;
+    text-decoration: none;
+}
+
+.author-popup a:hover
+{
+    text-decoration: underline;
+    cursor: url("../../../imgs/assets/pointer.png"), pointer;
+}
