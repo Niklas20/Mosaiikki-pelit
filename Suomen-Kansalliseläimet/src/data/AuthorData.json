@@ -1,0 +1,20 @@
+{
+    "authors": [
+        {
+            "name": "Niklas Virtanen",
+            "school": "Gradia Jyväskylä",
+            "degree": "Tieto ja viestintätekniikka",
+            "email": "virtanen.niklas20@gmail.com",
+            "github": "github.com/Niklas20",
+            "linkedin": "linkedin.com/in/niklas-virtanen-24494a285/"
+        },
+        {
+            "name": "Tomas Räsälä",
+            "school": "Gradia Jyväskylä",
+            "degree": "Tieto ja viestintätekniikka",
+            "email": "tomasrasala06@gmail.com",
+            "github": "github.com/zylic",
+            "linkedin": ""
+        }
+    ]
+}

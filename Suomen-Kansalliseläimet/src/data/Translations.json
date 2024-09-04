@@ -38,5 +38,17 @@
     "tooltip-language-en": {
         "fi": "Englanti",
         "en": "English"
+    },
+    "author-title": {
+        "fi": "Tekijät",
+        "en": "Authors"
+    },
+    "end-screen-restart-button": {
+        "fi": "Pelaa Uudestaan",
+        "en": "Play again"
+    },
+    "end-screen-title": {
+        "fi": "Pelin Loppu!",
+        "en": "Game Over!"
     }
 }
