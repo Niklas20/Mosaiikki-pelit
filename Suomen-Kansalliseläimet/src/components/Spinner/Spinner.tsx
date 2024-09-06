@@ -16,7 +16,7 @@ const Spinner = ({ animals }: SpinnerProps) => {
     useEffect(() => {
         if (isSpinning && reelRef.current) {
             const totalItems = animals.length;
-            const duplicatedItems = [...animals, ...animals, ...animals];
+            const duplicatedItems = [...animals, ...animals, ...animals, ...animals];
             const totalWidth = itemWidth * duplicatedItems.length;
             const randomIndex = Math.floor(Math.random() * totalItems);
             const randomOffset = Math.floor(Math.random() * itemWidth);
@@ -52,7 +52,7 @@ const Spinner = ({ animals }: SpinnerProps) => {
         <div className="spinner-container">
             <div className="item-wrapper">
                 <div className="items" ref={reelRef}>
-                    {[...animals, ...animals, ...animals].map((animal, index) => (
+                    {[...animals, ...animals, ...animals, ...animals].map((animal, index) => (
                         <div key={index} className="item">
                             <img src={animal.image} alt={animal.name} />
                         </div>
