@@ -34,7 +34,7 @@ const Spinner = ({ animals }: SpinnerProps) => {
                 reelRef.current!.style.transform = `translateX(-${stopPosition}px)`;
                 reelRef.current?.offsetHeight;
                 reelRef.current!.style.transition = '';
-                const indicatorPosition = itemWidth / 2;
+                const indicatorPosition = document.getElementsByClassName("item-wrapper")[0].clientWidth / 2;
                 const index = Math.floor((stopPosition + indicatorPosition) / itemWidth) % totalItems;
                 setSelectedAnimal(animals[index]);
             }, duration);
