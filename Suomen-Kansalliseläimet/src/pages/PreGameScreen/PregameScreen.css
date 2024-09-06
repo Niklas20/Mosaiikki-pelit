@@ -21,5 +21,29 @@
 }
 
 .pregame-screen-button1 {
-    
+    margin-top: 2px;
+    width: 500px;
+    height: 120px;
+    border-radius: 15px;
+}
+
+.pregame-screen-button2 {
+    margin-top: 2px;
+    width: 500px;
+    height: 120px;
+    border-radius: 15px;
+}
+
+.pregame-screen-button3 {
+    margin-top: 2px;
+    width: 500px;
+    height: 120px;
+    border-radius: 15px;
+}
+
+.pregame-screen-button4 {
+    margin-top: 2px;
+    width: 500px;
+    height: 120px;
+    border-radius: 15px;
 }

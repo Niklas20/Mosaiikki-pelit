@@ -64,19 +64,19 @@
         "en": "Email: {email}"
     },
     "pregame-screen-button1": {
-        "fi": "PLACEHOLDER TEXT",
-        "en": "PLACEHOLDER TEXT"
+        "fi": "Kansalliseläin + Kansalliskoira",
+        "en": "National animal + National dog"
     },
     "pregame-screen-button2": {
-        "fi": "PLACEHOLDER TEXT",
-        "en": "PLACEHOLDER TEXT"
+        "fi": "Kansallislintu + Kansalliskala",
+        "en": "National bird + National fish"
     },
     "pregame-screen-button3": {
-        "fi": "PLACEHOLDER TEXT",
-        "en": "PLACEHOLDER TEXT"
+        "fi": "Kansallishyönteinen + Kansallisperhonen",
+        "en": "National insect + National butterfly"
     },
     "pregame-screen-button4": {
-        "fi": "PLACEHOLDER TEXT",
-        "en": "PLACEHOLDER TEXT"
+        "fi": "Kansalliskukka + Kansallispuu",
+        "en": "National flower + National tree"
     }
 }
