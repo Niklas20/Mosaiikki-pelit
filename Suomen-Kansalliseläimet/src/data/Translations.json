@@ -62,5 +62,21 @@
     "author-popup-email": {
         "fi": "Sähköposti: {email}",
         "en": "Email: {email}"
+    },
+    "pregame-screen-button1": {
+        "fi": "PLACEHOLDER TEXT",
+        "en": "PLACEHOLDER TEXT"
+    },
+    "pregame-screen-button2": {
+        "fi": "PLACEHOLDER TEXT",
+        "en": "PLACEHOLDER TEXT"
+    },
+    "pregame-screen-button3": {
+        "fi": "PLACEHOLDER TEXT",
+        "en": "PLACEHOLDER TEXT"
+    },
+    "pregame-screen-button4": {
+        "fi": "PLACEHOLDER TEXT",
+        "en": "PLACEHOLDER TEXT"
     }
 }
