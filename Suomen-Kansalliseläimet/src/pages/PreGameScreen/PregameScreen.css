@@ -2,8 +2,8 @@
 {
     position: absolute;
     background-color: white;
-    width: 80%;
-    height: 90%;
+    width: 85%;
+    height: 87%;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -25,6 +25,16 @@
     width: 500px;
     height: 120px;
     border-radius: 15px;
+    background-image: url('../../imgs/assets/animalsanddogs.jpg');
+    background-size: cover;
+    background-position: center 80%;
+    color: white;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 1);
 }
 
 .pregame-screen-button2 {
@@ -32,6 +42,16 @@
     width: 500px;
     height: 120px;
     border-radius: 15px;
+    background-image: url('../../imgs/assets/birdsandfish.jpg');
+    background-size: cover;
+    background-position: center 60%;
+    color: white;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 1);
 }
 
 .pregame-screen-button3 {
@@ -39,6 +59,16 @@
     width: 500px;
     height: 120px;
     border-radius: 15px;
+    background-image: url('../../imgs/assets/butterfliesandinsects.jpg');
+    background-size: cover;
+    background-position: center 80%;
+    color: white;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 1);
 }
 
 .pregame-screen-button4 {
@@ -46,4 +76,14 @@
     width: 500px;
     height: 120px;
     border-radius: 15px;
+    background-image: url('../../imgs/assets/flowersandtrees.jpg');
+    background-size: cover;
+    background-position: center 70%;
+    color: white;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 1);
 }
