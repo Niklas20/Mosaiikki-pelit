@@ -7,7 +7,7 @@ const InfoScreen = () => {
     const translate = useTranslate();
 
     const handleButtonClick = () => {
-        navigate("/game");
+        navigate("/pregame");
     }
 
     return (

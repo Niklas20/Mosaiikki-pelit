@@ -62,5 +62,21 @@
     "author-popup-email": {
         "fi": "Sähköposti: {email}",
         "en": "Email: {email}"
+    },
+    "pregame-screen-button1": {
+        "fi": "Kansalliseläin + Kansalliskoira",
+        "en": "National animal + National dog"
+    },
+    "pregame-screen-button2": {
+        "fi": "Kansallislintu + Kansalliskala",
+        "en": "National bird + National fish"
+    },
+    "pregame-screen-button3": {
+        "fi": "Kansallishyönteinen + Kansallisperhonen",
+        "en": "National insect + National butterfly"
+    },
+    "pregame-screen-button4": {
+        "fi": "Kansalliskukka + Kansallispuu",
+        "en": "National flower + National tree"
     }
 }
