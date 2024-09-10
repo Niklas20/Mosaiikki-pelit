@@ -6,8 +6,9 @@ const PregameScreen = () => {
     const navigate = useNavigate();
     const translate = useTranslate();
 
-    const handleButtonClick = () => {
-        navigate("/game");
+    // Function to handle button click and pass the spinner type
+    const handleButtonClick = (spinnerType: number) => {
+        navigate("/game", { state: { spinnerType } });
     }
 
     return (
@@ -16,36 +17,35 @@ const PregameScreen = () => {
 
                 <button
                     className="pregame-screen-button1"
-                    onClick={handleButtonClick}
+                    onClick={() => handleButtonClick(1)}
                 >
                     {translate("pregame-screen-button1")}
                 </button>
 
                 <button
                     className="pregame-screen-button2"
-                    onClick={handleButtonClick}
+                    onClick={() => handleButtonClick(2)}
                 >
                     {translate("pregame-screen-button2")}
                 </button>
 
                 <button
                     className="pregame-screen-button3"
-                    onClick={handleButtonClick}
+                    onClick={() => handleButtonClick(3)}
                 >
                     {translate("pregame-screen-button3")}
                 </button>
 
                 <button
                     className="pregame-screen-button4"
-                    onClick={handleButtonClick}
+                    onClick={() => handleButtonClick(4)}
                 >
                     {translate("pregame-screen-button4")}
                 </button>
 
-
             </div>
         </div>
-    )
+    );
 }
 
 export default PregameScreen;
