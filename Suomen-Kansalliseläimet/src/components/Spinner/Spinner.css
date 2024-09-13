@@ -1,7 +1,7 @@
 .spinner-container
 {
-    position: fixed;
-    top: 50%;
+    position: relative;
+    top: 30%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 100%;
@@ -9,83 +9,58 @@
     overflow: hidden;
 }
 
-.item-wrapper
+.items
 {
     position: relative;
     width: 600px;
     height: 150px;
     margin: 0 auto;
-    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.5);
     border: 2px solid #000;
+    transition: all 0.5s ease-out;
 }
 
-.items
+.items::before
 {
-    display: flex;
-    white-space: nowrap;
-    transition: transform 0.5s ease-out;
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    border-style: solid;
+    border-width: 0 15px 15px 15px;
+    border-color: transparent transparent #000 transparent;
+    z-index: 9999;
 }
 
-.item
+.items::after
 {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 150px;
-    width: 150px;
-    border: 1px solid #000;
-    flex-shrink: 0;
-}
-
-.item img
-{
-    width: 100px;
-    height: 100px;
-    object-fit: contain;
-}
-
-.indicator
-{
+    content: "";
     position: absolute;
     top: 0;
     left: 50%;
-    width: 2px;
-    height: 100%;
-    background-color: #ff0000;
     transform: translateX(-50%);
+    border-style: solid;
+    border-width: 15px 15px 0 15px;
+    border-color: #000 transparent transparent transparent;
+    z-index: 9999;
 }
 
-.start-spin-button
+.spin-button
 {
     margin-top: 20px;
-    padding: 10px 20px;
-    font-size: 20px;
-    background-color: #000;
+    padding: 20px 40px;
+    font-size: 15px;
+    font-weight: bold;
     color: #fff;
-    border: none;
+    background-color: #000;
+    border: 2px solid #000;
     border-radius: 5px;
     cursor: pointer;
 }
 
-.start-spin-button:hover
+.spin-button:hover
 {
-    background-color: #333;
-}
-
-.start-spin-button:disabled
-{
-    background-color: #ccc;
-    cursor: not-allowed;
-}
-
-.result
-{
-    margin-top: 20px;
-}
-
-.result img
-{
-    width: 150px;
-    height: 150px;
-    object-fit: contain;
+    background-color: #fff;
+    color: #000;
 }
