@@ -15,7 +15,7 @@ const Spinner = ({ animals }: SpinnerProps) => {
         items.style.transition = "none";
         items.style.transform = "translateX(0)";
 
-        for (let i = 0; i < 30; i++) {
+        for (let i = 0; i < 50; i++) {
             const item = document.createElement("div");
             item.className = "item";
 
@@ -47,12 +47,12 @@ const Spinner = ({ animals }: SpinnerProps) => {
 
         const finalTranslateTo = baseTranslateTo + randomOffset;
 
-        items.style.transition = "transform 2s ease-in-out";
+        items.style.transition = "transform 5s ease-out";
         items.style.transform = `translateX(-${finalTranslateTo}px)`;
 
         setTimeout(() => {
             setIsRolling(false);
-        }, 2000);
+        }, 5000);
     };
 
     return (
