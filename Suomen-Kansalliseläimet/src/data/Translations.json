@@ -15,9 +15,49 @@
         "fi": "Aloita peli",
         "en": "Start game"
     },
+    "info-screen-title": {
+        "fi": "Suomen Kansallissymbolit peli",
+        "en": "Finnish nationalsymbols game"
+    },
+    "info-screen-text-1": {
+        "fi": "Seuraavassa näytössä sinun pitää valita neljästä eri pelimuodosta sen, jonka haluat pelata",
+        "en": "In the next screen you have to choose which gamemode out of the four choices you want to play."
+    },
+    "info-screen-text-2": {
+        "fi": "Sitten pääset pelaamaan peliä. Rulla pyörittää satunnaiseen asiaan ja sinun pitää vastata onko asia suomen kansallissymboli vai ei",
+        "en": "Then you get to play the game. The roller rolls onto a random thing and you have to answer if its a national symbol of finland or not."
+    },
+    "info-screen-text-3": {
+        "fi": "Jos saat oikein, saat pisteen. Jos saat väärin, et saa pistettä.",
+        "en": "If you get it right, you get a point. If you get it wrong, you dont get a point."
+    },
+    "info-screen-text-4": {
+        "fi": "Onnea peliin ja pidä hauskaa!",
+        "en": "Good luck and have fun!"
+    },
     "info-screen-button": {
         "fi": "Aloita peli",
         "en": "Start game"
+    },
+    "motive-screen-title": {
+        "fi": "Motiivi",
+        "en": "Motive"
+    },
+    "motive-screen-text-1": {
+        "fi": "Teimme tämän pelin, koska halusimme auttaa ihmisiä oppimaan Suomen kansallissymboleita.",
+        "en": "We made this game, because we wanted to help people learn Finnish national symbols."
+    },
+    "motive-screen-text-2": {
+        "fi": "Pelin avulla opit tunnistamaan Suomen kansallissymboleja ja opit Suomea samalla!",
+        "en": "The game will help you recognize Finnish national symbols and you will also learn Finnish!"
+    },
+    "motive-screen-text-3": {
+        "fi": "Peli on tehty 2024 syksyllä, ja se on tehty Gradian opiskelijoiden toimesta",
+        "en": "The game was made in the fall of 2024 and wasa made by the students of Gradia"
+    },
+    "motive-screen-button": {
+        "fi": "Jatka",
+        "en": "Continue"
     },
     "tooltip-motive": {
         "fi": "Motiivi",

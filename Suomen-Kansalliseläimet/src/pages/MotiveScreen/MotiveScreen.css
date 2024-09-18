@@ -1,62 +1,62 @@
-.info-screen-container
+.motive-screen-container
 {
     position: absolute;
     background-color: white;
     width: 80%;
-    height: 86%;
+    height: 85%;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     border-radius: 15%;
     filter: drop-shadow(0px 0px 10px black);
     box-shadow: inset rgba(0, 0, 0, 0.5) -3px -3px 5px,
-    inset rgba(255, 255, 255, 0.8) 3px 3px 5px,
-    rgba(0, 0, 0, 0.7) 3px 3px 5px -3px;
+        inset rgba(255, 255, 255, 0.8) 3px 3px 5px,
+        rgba(0, 0, 0, 0.7) 3px 3px 5px -3px;
     padding: 30px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     text-align: center;
 }
 
-.info-screen-title
+.motive-screen-title
 {
-    font-size: 2rem;
-    margin-bottom: 10px;
+    font-size: 3.5rem;
+    margin-bottom: 20px;
     color: #333333;
 }
 
-.info-screen-text
+.motive-screen-text
 {
     font-size: 1.4rem;
     color: #555555;
-    line-height: 1.3;
-    margin-top: 30px;
-    backface-visibility: hidden;
-    text-align: left;
-    width: 350px;
+    line-height: 1.5;
+    margin-bottom: 30px;
 }
 
-.info-screen-button
+.motive-screen-button
 {
+    background-color: white;
+    width: 180px;
+    height: 100px;
+    color: #333333;
     font-size: 1.5rem;
     border: 1px solid black;
     border-radius: 10px;
     padding: 10px 20px;
-    margin-top: 30px;
+    margin-top: 35px;
 }
 
-.info-screen-button:hover
+.motive-screen-button:hover
 {
-    background-color: rgb(200, 200, 200);
+    background-color: #f0f0f0;
     transform: scale(0.95);
     cursor: url("../../imgs/assets/pointer.png"), pointer;
 }
 
-.info-screen-button:active
+.motive-screen-button:active
 {
-    transform: scale(0.90);
-    bottom: 6%;
+    background-color: #f0f0f0;
+    margin-top: 50px;
     cursor: url("../../imgs/assets/pointer.png"), pointer;
 }

@@ -5,6 +5,7 @@ import EndScreen from "./pages/EndScreen/EndScreen";
 import GameScreen from "./pages/GameScreen/GameScreen";
 import InfoScreen from "./pages/InfoScreen/InfoScreen";
 import PregameScreen from "./pages/PreGameScreen/PregameScreen";
+import MotiveScreen from "./pages/MotiveScreen/MotiveScreen";
 
 const Router = () => {
 
@@ -17,7 +18,8 @@ const Router = () => {
                 { path: '/end', element: <EndScreen /> },
                 { path: '/pregame', element: <PregameScreen /> },
                 { path: '/game', element: <GameScreen /> },
-                { path: '/info', element: <InfoScreen /> }
+                { path: '/info', element: <InfoScreen /> },
+                { path: '/motive', element: <MotiveScreen />}
             ]
         }
     ]);
