@@ -1,0 +1,62 @@
+.motive-screen-container
+{
+    position: absolute;
+    background-color: white;
+    width: 80%;
+    height: 85%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 15%;
+    filter: drop-shadow(0px 0px 10px black);
+    box-shadow: inset rgba(0, 0, 0, 0.5) -3px -3px 5px,
+        inset rgba(255, 255, 255, 0.8) 3px 3px 5px,
+        rgba(0, 0, 0, 0.7) 3px 3px 5px -3px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.motive-screen-title
+{
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    color: #333333;
+}
+
+.motive-screen-text
+{
+    font-size: 1.4rem;
+    color: #555555;
+    line-height: 1.5;
+    margin-bottom: 30px;
+}
+
+.motive-screen-button
+{
+    background-color: white;
+    width: 180px;
+    height: 100px;
+    color: #333333;
+    font-size: 1.5rem;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 10px 20px;
+    margin-top: 35px;
+}
+
+.motive-screen-button:hover
+{
+    background-color: #f0f0f0;
+    transform: scale(0.95);
+    cursor: url("../../imgs/assets/pointer.png"), pointer;
+}
+
+.motive-screen-button:active
+{
+    background-color: #f0f0f0;
+    margin-top: 50px;
+    cursor: url("../../imgs/assets/pointer.png"), pointer;
+}

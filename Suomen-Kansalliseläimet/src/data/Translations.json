@@ -39,6 +39,26 @@
         "fi": "Aloita peli",
         "en": "Start game"
     },
+    "motive-screen-title": {
+        "fi": "Motiivi",
+        "en": "Motive"
+    },
+    "motive-screen-text-1": {
+        "fi": "Teimme tämän pelin, koska halusimme auttaa ihmisiä oppimaan Suomen kansallissymboleita.",
+        "en": "We made this game, because we wanted to help people learn Finnish national symbols."
+    },
+    "motive-screen-text-2": {
+        "fi": "Pelin avulla opit tunnistamaan Suomen kansallissymboleja ja opit Suomea samalla!",
+        "en": "The game will help you recognize Finnish national symbols and you will also learn Finnish!"
+    },
+    "motive-screen-text-3": {
+        "fi": "Peli on tehty 2024 syksyllä, ja se on tehty Gradian opiskelijoiden toimesta",
+        "en": "The game was made in the fall of 2024 and wasa made by the students of Gradia"
+    },
+    "motive-screen-button": {
+        "fi": "Jatka",
+        "en": "Continue"
+    },
     "tooltip-motive": {
         "fi": "Motiivi",
         "en": "Motive"
