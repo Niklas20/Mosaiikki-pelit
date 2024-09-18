@@ -58,7 +58,8 @@ const Spinner = ({ animals }: SpinnerProps) => {
         const totalWidth = itemWidth * itemsCount;
 
         const stopIndex = itemsCount - 6 + Math.floor(Math.random() * 3);
-        const finalTranslateTo = stopIndex * itemWidth - (visibleWidth / 2 - itemWidth / 2);
+        const randomOffset = Math.floor(Math.random() * itemWidth);
+        const finalTranslateTo = stopIndex * itemWidth - (visibleWidth / 2 - itemWidth / 2) + randomOffset;
 
         items.style.transition = "transform 5s ease-out";
         items.style.transform = `translateX(-${finalTranslateTo}px)`;
@@ -72,16 +73,6 @@ const Spinner = ({ animals }: SpinnerProps) => {
             const selectedAnimal = generatedAnimals[selectedAnimalIndex];
 
             setSelectedAnimal(selectedAnimal);
-
-            console.log("Final translate to:", finalTranslateTo);
-            console.log("Item width:", itemWidth);
-            console.log("Visible width:", visibleWidth);
-            console.log("Stop position:", stopPosition);
-            console.log("Center index:", centerIndex);
-            console.log("Selected animal index:", selectedAnimalIndex);
-            console.log("Selected animal:", selectedAnimal);
-            console.log("Generated animals:", generatedAnimals);
-            console.log("Animal div:", items.children[selectedAnimalIndex]);
 
             setItemsReady(false);
         }, 5000);
