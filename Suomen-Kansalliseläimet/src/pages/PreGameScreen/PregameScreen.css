@@ -87,3 +87,23 @@
     border: none;
     text-shadow: 2px 2px 3px rgba(0, 0, 0, 1);
 }
+
+.pregame-screen-button1:hover {
+    cursor: url("../../imgs/assets/pointer.png"), pointer;
+    scale: 0.95;
+}
+
+.pregame-screen-button2:hover {
+    cursor: url("../../imgs/assets/pointer.png"), pointer;
+    scale: 0.95;
+}
+
+.pregame-screen-button3:hover {
+    cursor: url("../../imgs/assets/pointer.png"), pointer;
+    scale: 0.95;
+}
+
+.pregame-screen-button4:hover {
+    cursor: url("../../imgs/assets/pointer.png"), pointer;
+    scale: 0.95;
+}
