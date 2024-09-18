@@ -76,6 +76,14 @@ const Spinner = ({ animals }: SpinnerProps) => {
 
             setSelectedAnimal(selectedAnimal);
 
+            const previousSelected = items.querySelector(".selected");
+            if (previousSelected) {
+                previousSelected.classList.remove("selected");
+            }
+
+            const selectedItem = items.children[centerIndex] as HTMLDivElement;
+            selectedItem.classList.add("selected");
+
             setItemsReady(false);
         }, 5000);
     };
