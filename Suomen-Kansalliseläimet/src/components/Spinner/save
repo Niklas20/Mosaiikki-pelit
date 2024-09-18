@@ -53,36 +53,33 @@ const Spinner = ({ animals }: SpinnerProps) => {
         const itemWrapper = document.querySelector(".item-wrapper") as HTMLDivElement;
         const itemWidth = items.querySelector(".item")!.clientWidth;
         const visibleWidth = itemWrapper.clientWidth;
+        const totalItems = generatedAnimals.length;
 
         const itemsCount = items.children.length;
-        const totalWidth = itemWidth * itemsCount;
+        const thirdLastIndex = itemsCount - 3;
+        const baseTranslateTo = itemWidth * thirdLastIndex - (visibleWidth / 2 - itemWidth / 2);
 
-        const stopIndex = itemsCount - 6 + Math.floor(Math.random() * 3);
-        const finalTranslateTo = stopIndex * itemWidth - (visibleWidth / 2 - itemWidth / 2);
+        const randomOffset = Math.floor(Math.random() * 100) - 50;
+        const finalTranslateTo = baseTranslateTo + randomOffset;
 
         items.style.transition = "transform 5s ease-out";
         items.style.transform = `translateX(-${finalTranslateTo}px)`;
 
+        const stopPosition = finalTranslateTo % (totalItems * itemWidth);
+
         setTimeout(() => {
             setIsRolling(false);
 
-            const stopPosition = finalTranslateTo % totalWidth;
-            const centerIndex = Math.floor((stopPosition + visibleWidth / 2 - itemWidth / 2) / itemWidth);
-            const selectedAnimalIndex = centerIndex % generatedAnimals.length;
-            const selectedAnimal = generatedAnimals[selectedAnimalIndex];
+            const indicatorPosition = document.getElementsByClassName("item-wrapper")[0].clientWidth / 2;
+            const rawIndex = (stopPosition + indicatorPosition) / itemWidth;
+            const index = Math.round(rawIndex) % totalItems;
+            const selected = generatedAnimals[index];
 
-            setSelectedAnimal(selectedAnimal);
+            console.log("Selected Animal: ", selected);
+            console.log("Generated List: ", generatedAnimals);
+            console.log("Selected Index: ", index);
 
-            console.log("Final translate to:", finalTranslateTo);
-            console.log("Item width:", itemWidth);
-            console.log("Visible width:", visibleWidth);
-            console.log("Stop position:", stopPosition);
-            console.log("Center index:", centerIndex);
-            console.log("Selected animal index:", selectedAnimalIndex);
-            console.log("Selected animal:", selectedAnimal);
-            console.log("Generated animals:", generatedAnimals);
-            console.log("Animal div:", items.children[selectedAnimalIndex]);
-
+            setSelectedAnimal(selected);
             setItemsReady(false);
         }, 5000);
     };
@@ -93,17 +90,17 @@ const Spinner = ({ animals }: SpinnerProps) => {
     };
 
     return (
-        <div className="spinner-container">
-            <div className="item-wrapper">
-                <div className="items">
+        <div className= "spinner-container" >
+        <div className="item-wrapper" >
+            <div className="items" >
 
                 </div>
-            </div>
-            <button className="spin-button" onClick={handleSpinClick} disabled={isRolling}>
-                {isRolling ? "Spinning..." : "Spin"}
-            </button>
-            {selectedAnimal && <p>You got: {selectedAnimal.name}!</p>}
-        </div>
+                </div>
+                < button className = "spin-button" onClick = { handleSpinClick } disabled = { isRolling } >
+                    { isRolling? "Spinning...": "Spin" }
+                    </button>
+    { selectedAnimal && <p>You got: { selectedAnimal.name } !</p> }
+    </div>
     );
 };
 
