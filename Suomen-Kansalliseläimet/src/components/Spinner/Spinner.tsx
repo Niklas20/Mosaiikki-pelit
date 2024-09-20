@@ -20,13 +20,23 @@ const Spinner = ({ animals }: SpinnerProps) => {
         items.style.transform = "translateX(0)";
 
         const generatedList: Animal[] = [];
+        let lastAnimal: Animal | null = null;
+        let secondLastAnimal: Animal | null = null;
 
         for (let i = 0; i < 50; i++) {
             const item = document.createElement("div");
             item.className = "item";
 
-            const randomIndex = Math.floor(Math.random() * animals.length);
-            const randomAnimal = animals[randomIndex];
+            let randomAnimal: Animal;
+
+            do {
+                const randomIndex = Math.floor(Math.random() * animals.length);
+                randomAnimal = animals[randomIndex];
+            } while (randomAnimal === lastAnimal || randomAnimal === secondLastAnimal);
+
+            secondLastAnimal = lastAnimal;
+            lastAnimal = randomAnimal;
+
             const name = document.createElement("p");
             name.className = "item-name";
             name.innerText = randomAnimal.name;
@@ -83,6 +93,9 @@ const Spinner = ({ animals }: SpinnerProps) => {
 
             const selectedItem = items.children[centerIndex] as HTMLDivElement;
             selectedItem.classList.add("selected");
+
+            console.log("All items", generatedAnimals);
+
 
             setItemsReady(false);
         }, 5000);
