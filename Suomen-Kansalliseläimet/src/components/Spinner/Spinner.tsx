@@ -10,8 +10,17 @@ const Spinner = ({ animals }: SpinnerProps) => {
     const [isRolling, setIsRolling] = useState<boolean>(false);
     const [generatedAnimals, setGeneratedAnimals] = useState<Animal[]>([]);
     const [selectedAnimal, setSelectedAnimal] = useState<Animal | null>(null);
-
     const [itemsReady, setItemsReady] = useState<boolean>(false);
+    const [remainingAnimals, setRemainingAnimals] = useState<Animal[]>(animals);
+    const [feedback, setFeedback] = useState<string | null>(null);
+    const [shouldGenerateItems, setShouldGenerateItems] = useState<boolean>(false);
+
+    useEffect(() => {
+        if (shouldGenerateItems) {
+            generateItems();
+            setShouldGenerateItems(false);
+        }
+    }, [shouldGenerateItems]);
 
     const generateItems = () => {
         const items = document.querySelector(".items") as HTMLDivElement;
@@ -20,13 +29,36 @@ const Spinner = ({ animals }: SpinnerProps) => {
         items.style.transform = "translateX(0)";
 
         const generatedList: Animal[] = [];
+        let lastAnimal: Animal | null = null;
+        let secondLastAnimal: Animal | null = null;
 
         for (let i = 0; i < 50; i++) {
             const item = document.createElement("div");
             item.className = "item";
 
-            const randomIndex = Math.floor(Math.random() * animals.length);
-            const randomAnimal = animals[randomIndex];
+            let randomAnimal: Animal | undefined;
+
+            if (remainingAnimals.length > 2) {
+                do {
+                    const randomIndex = Math.floor(Math.random() * remainingAnimals.length);
+                    randomAnimal = remainingAnimals[randomIndex];
+                } while (randomAnimal === lastAnimal || randomAnimal === secondLastAnimal);
+
+                secondLastAnimal = lastAnimal;
+                lastAnimal = randomAnimal;
+            } else if (remainingAnimals.length > 0) {
+                const randomIndex = Math.floor(Math.random() * remainingAnimals.length);
+                randomAnimal = remainingAnimals[randomIndex];
+            } else {
+                console.error("No animals left to generate");
+                return;
+            }
+
+            if (!randomAnimal) {
+                console.error("Random animal is undefined");
+                return;
+            }
+
             const name = document.createElement("p");
             name.className = "item-name";
             name.innerText = randomAnimal.name;
@@ -76,6 +108,10 @@ const Spinner = ({ animals }: SpinnerProps) => {
 
             setSelectedAnimal(selectedAnimal);
 
+            setRemainingAnimals((prevRemainingAnimals) =>
+                prevRemainingAnimals.filter((animal) => animal.id !== selectedAnimal.id)
+            );
+
             const previousSelected = items.querySelector(".selected");
             if (previousSelected) {
                 previousSelected.classList.remove("selected");
@@ -88,9 +124,29 @@ const Spinner = ({ animals }: SpinnerProps) => {
         }, 5000);
     };
 
+    const handleChoice = (isNational: boolean) => {
+        if (!selectedAnimal) return;
+
+        if (isNational === selectedAnimal.isFinnishNational) {
+            setFeedback("Correct!");
+        } else {
+            setFeedback("Wrong! This animal is " + (selectedAnimal.isFinnishNational ? "a Finnish national animal" : "not a Finnish national animal"));
+        }
+    }
+
     const handleSpinClick = () => {
-        setIsRolling(true);
-        generateItems();
+        if (remainingAnimals.length === 0) {
+            setRemainingAnimals(animals);
+            setIsRolling(true);
+            setFeedback(null);
+            setSelectedAnimal(null);
+            setShouldGenerateItems(true);
+        } else {
+            setIsRolling(true);
+            setFeedback(null);
+            setSelectedAnimal(null);
+            generateItems();
+        }
     };
 
     return (
@@ -103,7 +159,17 @@ const Spinner = ({ animals }: SpinnerProps) => {
             <button className="spin-button" onClick={handleSpinClick} disabled={isRolling}>
                 {isRolling ? "Spinning..." : "Spin"}
             </button>
-            {selectedAnimal && <p>You got: {selectedAnimal.name}!</p>}
+
+            {selectedAnimal && (
+                <div>
+                    <p>You got: {selectedAnimal.name}</p>
+                    <p>Is this animal a national animal?</p>
+                    <button onClick={() => handleChoice(true)}>Yes</button>
+                    <button onClick={() => handleChoice(false)}>No</button>
+                </div>
+            )}
+
+            {feedback && <p>{feedback}</p>}
         </div>
     );
 };
