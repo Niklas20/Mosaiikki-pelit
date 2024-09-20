@@ -108,8 +108,8 @@
         "en": "Close"
     },
     "end-screen-title": {
-        "fi": "Pelin Loppu!",
-        "en": "Game Over!"
+        "fi": "Hyvin tehty!",
+        "en": "Good job!"
     },
     "end-screen-points": {
         "fi": "Pisteet: {points}",
@@ -182,5 +182,9 @@
     "hints-left": {
         "fi": "Vihjettä jäljellä",
         "en": "Hints left"
+    },
+    "game-screen-back-button": {
+        "fi": "Takaisin",
+        "en": "Back"
     }
 }

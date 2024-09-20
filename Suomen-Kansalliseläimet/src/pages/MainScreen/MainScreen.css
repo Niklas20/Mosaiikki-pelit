@@ -2,15 +2,15 @@
 {
     text-align: center;
     margin-top: 7%;
-    font-size: 3.4rem;
-    background: linear-gradient(90deg, #ff9100, #fff5e6);
+    font-size: 3.2rem;
+    background: linear-gradient(90deg, #ff6600, #ffffff);
     border: #532c00;
     border-radius: 2px;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     color: transparent;
-    filter: drop-shadow(2px 2px 3px hsl(0, 0%, 8%));
+    filter: drop-shadow(5px 3px 1px hsl(29, 100%, 14%));
 }
 
 .main-screen-button
