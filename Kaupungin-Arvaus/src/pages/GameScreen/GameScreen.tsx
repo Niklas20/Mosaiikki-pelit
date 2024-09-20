@@ -48,6 +48,12 @@ const GameScreen = (props: GameScreenProps) => {
     const navigate = useNavigate();
     const translate = useTranslate();
     const { isGameOver, endGame, resetGameState } = useGameOver();
+    
+    const handleButtonClick = () => {
+        resetGameState();
+        resetGame();
+        navigate("/info");
+    }
 
     useEffect(() => {
         if (initialized.current) return;
@@ -254,6 +260,13 @@ const GameScreen = (props: GameScreenProps) => {
                         onClick={handleImageClick}
                     />
                 </div>
+
+                <button
+                    className="game-screen-back-button"
+                    onClick={handleButtonClick}
+                >
+                    {translate("game-screen-back-button")}
+                </button>
 
                 <HintContainer
                     className="game-screen-hint-container"

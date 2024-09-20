@@ -218,3 +218,29 @@
     -webkit-text-fill-color: transparent;
     background-clip: text;
 }
+
+.game-screen-back-button {
+    box-shadow: inset 1px 39px 16px -12px #0099ff;
+    background-color: #005186;
+    border-radius: 10px;
+    border: 2px solid #fff5e6;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    font-family: Arial;
+    font-size: 15px;
+    padding: 8px 30px;
+    text-decoration: none;
+    text-shadow: 2px 2px 1px #002864;
+    position: absolute;
+    left: 4.7%;
+    top: 0%;
+}
+
+.game-screen-back-button:hover {
+    scale: 1.1;
+}
+
+.game-screen-back-button:active {
+    scale: 0.95
+}

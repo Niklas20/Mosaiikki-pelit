@@ -12,7 +12,7 @@ const EndScreen = () => {
     const navigate = useNavigate();
 
     const handleButtonClick = () => {
-        navigate("/game");
+        navigate("/pregame");
     }
 
     const openAuthorPopup = (authorName: string) => {

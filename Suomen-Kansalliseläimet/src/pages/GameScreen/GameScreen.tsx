@@ -1,7 +1,11 @@
 import React from "react";
+import "./GameScreen.css";
 import { useLocation } from "react-router-dom";
 import { Animal } from "../../utils/types";
 import Spinner from "../../components/Spinner/Spinner";
+import { useTranslate } from "../../utils/translate";
+import { useNavigate } from "react-router-dom";
+import Tooltip from "../../components/Tooltip/Tooltip";
 
 const animals: { [key: number]: Animal[] } = {
     1: [ // Kansalliseläin ja koira
@@ -59,11 +63,26 @@ const GameScreen: React.FC = () => {
     const spinnerType = location.state?.spinnerType;
     const selectedAnimals = animals[spinnerType];
 
+    const navigate = useNavigate();
+    const translate = useTranslate();
+
+    const handleButtonClick = () => {
+        navigate("/pregame");
+    }
+
     return (
         <div className="screen">
             {selectedAnimals.length > 0 && (
                 <Spinner animals={selectedAnimals} />
             )}
+
+            <button
+                className="game-screen-back-button"
+                onClick={handleButtonClick}
+            >
+                {translate("game-screen-back-button")}
+            </button>
+
         </div>
     );
 };

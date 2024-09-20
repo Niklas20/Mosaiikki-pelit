@@ -1,7 +1,7 @@
 {
     "main-screen-title": {
-        "fi": "Suomen Kansalliseläimet",
-        "en": "Finnish National Animals"
+        "fi": "Suomen Kansallissymbolit",
+        "en": "Finnish National Symbols"
     },
     "main-screen-big-language-button-fi": {
         "fi": "Suomi",
@@ -17,7 +17,7 @@
     },
     "info-screen-title": {
         "fi": "Suomen Kansallissymbolit peli",
-        "en": "Finnish nationalsymbols game"
+        "en": "Finnish national symbols game"
     },
     "info-screen-text-1": {
         "fi": "Seuraavassa näytössä sinun pitää valita neljästä eri pelimuodosta sen, jonka haluat pelata",
@@ -88,8 +88,8 @@
         "en": "Play again"
     },
     "end-screen-title": {
-        "fi": "Pelin Loppu!",
-        "en": "Game Over!"
+        "fi": "Hyvin tehty!",
+        "en": "Well done!"
     },
     "author-popup-school": {
         "fi": "Koulu: {school}",
@@ -118,5 +118,9 @@
     "pregame-screen-button4": {
         "fi": "Kansalliskukka + Kansallispuu",
         "en": "National flower + National tree"
+    },
+    "game-screen-back-button": {
+        "fi": "Takaisin",
+        "en": "Back"
     }
 }
