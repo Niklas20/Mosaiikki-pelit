@@ -152,11 +152,11 @@
         "en": "Correct!"
     },
     "spinner-wrong-national": {
-        "fi": "Väärin! Tämä eläin on Suomen kansallissymboli",
-        "en": "Wrong! This animal is a Finnish national symbol"
+        "fi": "Väärin! Tämä eläin on Suomen kansallissymboli.",
+        "en": "Wrong! This animal is a Finnish national symbol."
     },
     "spinner-wrong-not-national": {
-        "fi": "Väärin! Tämä eläin ei ole Suomen kansallissymboli",
-        "en": "Wrong! This animal is not a Finnish national symbol"
+        "fi": "Väärin! Tämä eläin ei ole Suomen kansallissymboli.",
+        "en": "Wrong! This animal is not a Finnish national symbol."
     }
 }
