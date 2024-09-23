@@ -69,6 +69,8 @@ const Spinner = ({ animals }: SpinnerProps) => {
             name.innerText = randomAnimal.name;
             item.appendChild(name);
 
+            item.style.backgroundImage = `url(imgs/game/${randomAnimal.image})`;
+
             items.appendChild(item);
             generatedList.push(randomAnimal);
         }
@@ -167,14 +169,14 @@ const Spinner = ({ animals }: SpinnerProps) => {
 
             {selectedAnimal && (
                 <div>
-                    <p>{translate("spinner-you-got")}: {selectedAnimal.name}</p>
-                    <p>{translate("spinner-question")}</p>
-                    <button onClick={() => handleChoice(true)}>{translate("spinner-yes")}</button>
-                    <button onClick={() => handleChoice(false)}>{translate("spinner-no")}</button>
+                    <p className="selected-animal">{translate("spinner-you-got")}: {selectedAnimal.name}</p>
+                    <p className="question">{translate("spinner-question")}</p>
+                    <button className="answer-button" onClick={() => handleChoice(true)}>{translate("spinner-yes")}</button>
+                    <button className="answer-button" onClick={() => handleChoice(false)}>{translate("spinner-no")}</button>
                 </div>
             )}
 
-            {feedback && <p>{feedback}</p>}
+            {feedback && <p className="feedback-message">{feedback}</p>}
         </div>
     );
 };

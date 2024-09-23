@@ -16,8 +16,7 @@
     width: 600px;
     height: 150px;
     margin: 0 auto;
-    background-color: rgba(0, 0, 0, 0.5);
-    border: 2px solid #000;
+    border: 2px solid #FFA500;
     transition: all 0.5s ease-out;
     overflow: hidden;
 }
@@ -34,16 +33,19 @@
     align-items: center;
     min-width: 150px;
     height: 150px;
-    background-color: rgba(0, 0, 0, 0.3);
-    border: 1px solid #000;
+    border: 1px solid #FFA500;
     font-size: 14px;
-    color: #000;
+    color: white;
     text-align: center;
     transition: all 0.2s ease-in-out;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .item.selected {
-    box-shadow: 0 0 10px 5px rgba(255, 255, 0, 0.8);
+    box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.8);
+    transform: scale(1.2);
 }
 
 .item-name {
@@ -59,7 +61,7 @@
     transform: translateX(-50%);
     border-style: solid;
     border-width: 0 10px 10px 10px;
-    border-color: transparent transparent red transparent;
+    border-color: transparent transparent white transparent;
     z-index: 9999;
 }
 
@@ -71,7 +73,7 @@
     transform: translateX(-50%);
     border-style: solid;
     border-width: 10px 10px 0 10px;
-    border-color: red transparent transparent transparent;
+    border-color: white transparent transparent transparent;
     z-index: 9999;
 }
 
@@ -81,13 +83,55 @@
     font-size: 15px;
     font-weight: bold;
     color: #fff;
-    background-color: #000;
-    border: 2px solid #000;
+    background-color: #FFA500;
+    border: 2px solid #FFA500;
     border-radius: 5px;
     cursor: pointer;
 }
 
 .spin-button:hover {
     background-color: #fff;
-    color: #000;
+    color: #FFA500;
+
+    cursor: url("../../imgs/assets/pointer.png"), pointer;
+}
+
+.selected-animal {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #FFA500;
+}
+
+.question {
+    margin-top: 10px;
+    font-size: 16px;
+    color: #fff;
+}
+
+.answer-button {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #FFA500;
+    color: #FFF;
+    border: 2px solid #FFA500;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.answer-button:hover {
+    background-color: #FFF;
+    color: #FFA500;
+
+    cursor: url("../../imgs/assets/pointer.png"), pointer;
+}
+
+.feedback-message {
+    margin-top: 15px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #FFA500;
 }
