@@ -61,7 +61,7 @@
     transform: translateX(-50%);
     border-style: solid;
     border-width: 0 10px 10px 10px;
-    border-color: transparent transparent white transparent;
+    border-color: transparent transparent red transparent;
     z-index: 9999;
 }
 
@@ -73,7 +73,7 @@
     transform: translateX(-50%);
     border-style: solid;
     border-width: 10px 10px 0 10px;
-    border-color: white transparent transparent transparent;
+    border-color: red transparent transparent transparent;
     z-index: 9999;
 }
 
@@ -94,6 +94,12 @@
     color: #FFA500;
 
     cursor: url("../../imgs/assets/pointer.png"), pointer;
+}
+
+.spin-button:disabled {
+    background-color: #ccc;
+    color: #fff;
+    cursor: url("../../imgs/assets/cursor.png"), not-allowed;
 }
 
 .selected-animal {
