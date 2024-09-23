@@ -135,8 +135,8 @@ const GameScreen = (props: GameScreenProps) => {
     
             if (hintIndex < allHints.length) {
                 revealHint(allHints[hintIndex], hintIndex);
-                setPoints(prevPoints => prevPoints - 200);
             }
+            setPoints(prevPoints => prevPoints - 200);
         }
     };
     
