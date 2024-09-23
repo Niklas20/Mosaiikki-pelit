@@ -45,7 +45,7 @@ const animals: { [key: number]: Animal[] } = {
     ],
     4: [ // Kansalliskukka ja puu
         { id: 1, name: "Kielo", image: "kielo.jpg", isFinnishNational: true },
-        { id: 2, name: "Ahokeltano", image: "ahokeltano.jpg", isFinnishNational: false },
+        { id: 2, name: "Ahokeltano", image: "ahokeltanot.jpg", isFinnishNational: false },
         { id: 3, name: "Kissankello", image: "kissankello.jpg", isFinnishNational: false },
         { id: 4, name: "Alaskanlupiini", image: "alaskanlupiini.jpg", isFinnishNational: false },
         { id: 5, name: "Auringonkukka", image: "auringonkukka.jpg", isFinnishNational: false },

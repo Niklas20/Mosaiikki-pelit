@@ -15,10 +15,19 @@ const Spinner = ({ animals }: SpinnerProps) => {
     const [remainingAnimals, setRemainingAnimals] = useState<Animal[]>(animals);
     const [feedbackKey, setFeedbackKey] = useState<string | null>(null);
     const [shouldGenerateItems, setShouldGenerateItems] = useState<boolean>(false);
+    const [initialItemsGenerated, setInitialItemsGenerated] = useState<boolean>(false);
+    const [hasAnswered, setHasAnswered] = useState<boolean>(true);
 
     const translate = useTranslate();
 
     const feedback = feedbackKey ? translate(feedbackKey) : null;
+
+    useEffect(() => {
+        if (!initialItemsGenerated) {
+            generateInitialItems();
+            setInitialItemsGenerated(true);
+        }
+    }, [initialItemsGenerated]);
 
     useEffect(() => {
         if (shouldGenerateItems) {
@@ -26,6 +35,51 @@ const Spinner = ({ animals }: SpinnerProps) => {
             setShouldGenerateItems(false);
         }
     }, [shouldGenerateItems]);
+
+    const generateInitialItems = () => {
+        const items = document.querySelector(".items") as HTMLDivElement;
+        items.innerHTML = "";
+        items.style.transition = "none";
+        items.style.transform = "translateX(0)";
+
+        const generatedList: Animal[] = [];
+
+        for (let i = 0; i < 4; i++) {
+            const item = document.createElement("div");
+            item.className = "item";
+
+            let randomAnimal: Animal | undefined;
+
+            if (remainingAnimals.length > 2) {
+                do {
+                    const randomIndex = Math.floor(Math.random() * remainingAnimals.length);
+                    randomAnimal = remainingAnimals[randomIndex];
+                } while (generatedList.includes(randomAnimal));
+
+            } else if (remainingAnimals.length > 0) {
+                const randomIndex = Math.floor(Math.random() * remainingAnimals.length);
+                randomAnimal = remainingAnimals[randomIndex];
+            } else {
+                console.error("No animals left to generate");
+                return;
+            }
+
+            if (!randomAnimal) {
+                console.error("Random animal is undefined");
+                return;
+            }
+
+            const name = document.createElement("p");
+            name.className = "item-name";
+            name.innerText = randomAnimal.name;
+            item.appendChild(name);
+
+            item.style.backgroundImage = `url(imgs/game/${randomAnimal.image})`;
+
+            items.appendChild(item);
+            generatedList.push(randomAnimal);
+        }
+    };
 
     const generateItems = () => {
         const items = document.querySelector(".items") as HTMLDivElement;
@@ -128,6 +182,7 @@ const Spinner = ({ animals }: SpinnerProps) => {
             selectedItem.classList.add("selected");
 
             setItemsReady(false);
+            setHasAnswered(false);
         }, 5000);
     };
 
@@ -139,6 +194,8 @@ const Spinner = ({ animals }: SpinnerProps) => {
         } else {
             setFeedbackKey(selectedAnimal.isFinnishNational ? "spinner-wrong-national" : "spinner-wrong-not-national");
         }
+
+        setHasAnswered(true);
     }
 
     const handleSpinClick = () => {
@@ -163,7 +220,7 @@ const Spinner = ({ animals }: SpinnerProps) => {
 
                 </div>
             </div>
-            <button className="spin-button" onClick={handleSpinClick} disabled={isRolling}>
+            <button className="spin-button" onClick={handleSpinClick} disabled={isRolling || !hasAnswered}>
                 {isRolling ? translate("spinner-button-spinning") : translate("spinner-button-spin")}
             </button>
 
