@@ -5,7 +5,6 @@ import { Animal } from "../../utils/types";
 import Spinner from "../../components/Spinner/Spinner";
 import { useTranslate } from "../../utils/translate";
 import { useNavigate } from "react-router-dom";
-import Tooltip from "../../components/Tooltip/Tooltip";
 
 const animals: { [key: number]: Animal[] } = {
     1: [ // Kansalliseläin ja koira

@@ -69,6 +69,8 @@ const Spinner = ({ animals }: SpinnerProps) => {
             name.innerText = randomAnimal.name;
             item.appendChild(name);
 
+            item.style.backgroundImage = `url(imgs/game/${randomAnimal.image})`;
+
             items.appendChild(item);
             generatedList.push(randomAnimal);
         }
