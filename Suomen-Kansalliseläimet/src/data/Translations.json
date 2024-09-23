@@ -122,5 +122,41 @@
     "game-screen-back-button": {
         "fi": "Takaisin",
         "en": "Back"
+    },
+    "spinner-button-spinning": {
+        "fi": "Pyöritetään...",
+        "en": "Spinning..."
+    },
+    "spinner-button-spin": {
+        "fi": "Pyöritä",
+        "en": "Spin"
+    },
+    "spinner-you-got": {
+        "fi": "Sinä sait",
+        "en": "You got"
+    },
+    "spinner-question": {
+        "fi": "Onko tämä Suomen kansallissymboli?",
+        "en": "Is this a Finnish national symbol?"
+    },
+    "spinner-yes": {
+        "fi": "Kyllä",
+        "en": "Yes"
+    },
+    "spinner-no": {
+        "fi": "Ei",
+        "en": "No"
+    },
+    "spinner-correct": {
+        "fi": "Oikein!",
+        "en": "Correct!"
+    },
+    "spinner-wrong-national": {
+        "fi": "Väärin! Tämä eläin on Suomen kansallissymboli",
+        "en": "Wrong! This animal is a Finnish national symbol"
+    },
+    "spinner-wrong-not-national": {
+        "fi": "Väärin! Tämä eläin ei ole Suomen kansallissymboli",
+        "en": "Wrong! This animal is not a Finnish national symbol"
     }
 }

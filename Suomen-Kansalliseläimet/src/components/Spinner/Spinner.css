@@ -1,16 +1,15 @@
-.spinner-container
-{
+.spinner-container {
     position: relative;
-    top: 30%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 100%;
+    height: 80%;
     text-align: center;
     overflow: hidden;
 }
 
-.item-wrapper
-{
+.item-wrapper {
     position: relative;
     display: flex;
     align-items: center;
@@ -23,15 +22,13 @@
     overflow: hidden;
 }
 
-.items
-{
+.items {
     display: flex;
     align-items: center;
     width: max-content;
 }
 
-.item
-{
+.item {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -45,19 +42,16 @@
     transition: all 0.2s ease-in-out;
 }
 
-.item.selected
-{
+.item.selected {
     box-shadow: 0 0 10px 5px rgba(255, 255, 0, 0.8);
 }
 
-.item-name
-{
+.item-name {
     color: #fff;
     font-weight: bold;
 }
 
-.item-wrapper::before
-{
+.item-wrapper::before {
     content: "";
     position: absolute;
     bottom: 0;
@@ -69,8 +63,7 @@
     z-index: 9999;
 }
 
-.item-wrapper::after
-{
+.item-wrapper::after {
     content: "";
     position: absolute;
     top: 0;
@@ -82,8 +75,7 @@
     z-index: 9999;
 }
 
-.spin-button
-{
+.spin-button {
     margin-top: 20px;
     padding: 20px 40px;
     font-size: 15px;
@@ -95,8 +87,7 @@
     cursor: pointer;
 }
 
-.spin-button:hover
-{
+.spin-button:hover {
     background-color: #fff;
     color: #000;
 }
