@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Animal } from "../../utils/types";
 import "./Spinner.css";
+import { useTranslate } from "../../utils/translate";
 
 interface SpinnerProps {
     animals: Animal[];
@@ -14,6 +15,8 @@ const Spinner = ({ animals }: SpinnerProps) => {
     const [remainingAnimals, setRemainingAnimals] = useState<Animal[]>(animals);
     const [feedback, setFeedback] = useState<string | null>(null);
     const [shouldGenerateItems, setShouldGenerateItems] = useState<boolean>(false);
+
+    const translate = useTranslate();
 
     useEffect(() => {
         if (shouldGenerateItems) {
@@ -157,15 +160,15 @@ const Spinner = ({ animals }: SpinnerProps) => {
                 </div>
             </div>
             <button className="spin-button" onClick={handleSpinClick} disabled={isRolling}>
-                {isRolling ? "Spinning..." : "Spin"}
+                {isRolling ? translate("spinner-button-spinning") : translate("spinner-button-spin")}
             </button>
 
             {selectedAnimal && (
                 <div>
-                    <p>You got: {selectedAnimal.name}</p>
-                    <p>Is this animal a national animal?</p>
-                    <button onClick={() => handleChoice(true)}>Yes</button>
-                    <button onClick={() => handleChoice(false)}>No</button>
+                    <p>{translate("spinner-you-got")}: {selectedAnimal.name}</p>
+                    <p>{translate("spinner-question")}</p>
+                    <button onClick={() => handleChoice(true)}>{translate("spinner-yes")}</button>
+                    <button onClick={() => handleChoice(false)}>{translate("spinner-no")}</button>
                 </div>
             )}
 

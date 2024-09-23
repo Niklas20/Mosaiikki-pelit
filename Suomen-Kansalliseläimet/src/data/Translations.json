@@ -122,5 +122,29 @@
     "game-screen-back-button": {
         "fi": "Takaisin",
         "en": "Back"
+    },
+    "spinner-button-spinning": {
+        "fi": "Pyöritetään...",
+        "en": "Spinning..."
+    },
+    "spinner-button-spin": {
+        "fi": "Pyöritä",
+        "en": "Spin"
+    },
+    "spinner-you-got": {
+        "fi": "Sinä sait",
+        "en": "You got"
+    },
+    "spinner-question": {
+        "fi": "Onko tämä Suomen kansallissymboli?",
+        "en": "Is this a Finnish national symbol?"
+    },
+    "spinner-yes": {
+        "fi": "Kyllä",
+        "en": "Yes"
+    },
+    "spinner-no": {
+        "fi": "Ei",
+        "en": "No"
     }
 }
