@@ -32,6 +32,10 @@ const InfoScreen = () => {
                 >
                     {translate("info-screen-button")}
                 </button>
+
+                <img className="imghint1"></img>
+                <img className="imghint2"></img>
+                <img className="imghint3"></img>
             </div>
         </div>
     )
