@@ -13,10 +13,12 @@ const Spinner = ({ animals }: SpinnerProps) => {
     const [selectedAnimal, setSelectedAnimal] = useState<Animal | null>(null);
     const [itemsReady, setItemsReady] = useState<boolean>(false);
     const [remainingAnimals, setRemainingAnimals] = useState<Animal[]>(animals);
-    const [feedback, setFeedback] = useState<string | null>(null);
+    const [feedbackKey, setFeedbackKey] = useState<string | null>(null);
     const [shouldGenerateItems, setShouldGenerateItems] = useState<boolean>(false);
 
     const translate = useTranslate();
+
+    const feedback = feedbackKey ? translate(feedbackKey) : null;
 
     useEffect(() => {
         if (shouldGenerateItems) {
@@ -131,9 +133,9 @@ const Spinner = ({ animals }: SpinnerProps) => {
         if (!selectedAnimal) return;
 
         if (isNational === selectedAnimal.isFinnishNational) {
-            setFeedback("Correct!");
+            setFeedbackKey(translate("spinner-correct"));
         } else {
-            setFeedback("Wrong! This animal is " + (selectedAnimal.isFinnishNational ? "a Finnish national animal" : "not a Finnish national animal"));
+            setFeedbackKey(selectedAnimal.isFinnishNational ? "spinner-wrong-national" : "spinner-wrong-not-national");
         }
     }
 
@@ -141,12 +143,12 @@ const Spinner = ({ animals }: SpinnerProps) => {
         if (remainingAnimals.length === 0) {
             setRemainingAnimals(animals);
             setIsRolling(true);
-            setFeedback(null);
+            setFeedbackKey(null);
             setSelectedAnimal(null);
             setShouldGenerateItems(true);
         } else {
             setIsRolling(true);
-            setFeedback(null);
+            setFeedbackKey(null);
             setSelectedAnimal(null);
             generateItems();
         }
