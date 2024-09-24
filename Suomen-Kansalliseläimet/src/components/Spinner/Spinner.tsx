@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Animal } from "../../utils/types";
 import "./Spinner.css";
 import { useTranslate } from "../../utils/translate";
+import ConfettiComponent from "../../components/Confetti/Confetti";
 
 interface SpinnerProps {
     animals: Animal[];
@@ -17,6 +18,7 @@ const Spinner = ({ animals }: SpinnerProps) => {
     const [shouldGenerateItems, setShouldGenerateItems] = useState<boolean>(false);
     const [initialItemsGenerated, setInitialItemsGenerated] = useState<boolean>(false);
     const [hasAnswered, setHasAnswered] = useState<boolean>(true);
+    const [showConfetti, setShowConfetti] = useState<boolean>(false);
 
     const translate = useTranslate();
 
@@ -156,7 +158,7 @@ const Spinner = ({ animals }: SpinnerProps) => {
         const randomOffset = Math.floor(Math.random() * (itemWidth - centerBuffer * 2)) + centerBuffer;
         const finalTranslateTo = stopIndex * itemWidth - (visibleWidth / 2 - itemWidth / 2) + randomOffset;
 
-        items.style.transition = "transform 5s ease-out";
+        items.style.transition = "transform 3s ease-out";
         items.style.transform = `translateX(-${finalTranslateTo}px)`;
 
         setTimeout(() => {
@@ -191,8 +193,12 @@ const Spinner = ({ animals }: SpinnerProps) => {
 
         if (isNational === selectedAnimal.isFinnishNational) {
             setFeedbackKey(translate("spinner-correct"));
+            console.log("suppinkia")
+            setShowConfetti(true);
+            setTimeout(() => setShowConfetti(false), 3000);
         } else {
             setFeedbackKey(selectedAnimal.isFinnishNational ? "spinner-wrong-national" : "spinner-wrong-not-national");
+            console.log("suppinkia2")
         }
 
         setHasAnswered(true);
@@ -234,6 +240,8 @@ const Spinner = ({ animals }: SpinnerProps) => {
             )}
 
             {feedback && <p className="feedback-message">{feedback}</p>}
+
+            <ConfettiComponent showConfetti={showConfetti} />
         </div>
     );
 };

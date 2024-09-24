@@ -81,7 +81,6 @@ const GameScreen: React.FC = () => {
             >
                 {translate("game-screen-back-button")}
             </button>
-
         </div>
     );
 };
