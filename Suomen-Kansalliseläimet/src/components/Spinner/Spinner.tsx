@@ -5,9 +5,12 @@ import { useTranslate } from "../../utils/translate";
 
 interface SpinnerProps {
     animals: Animal[];
+    preloadedImages: Record<string, HTMLImageElement>;
 }
 
-const Spinner = ({ animals }: SpinnerProps) => {
+const Spinner = (props: SpinnerProps) => {
+    const { animals, preloadedImages } = props;
+
     const [isRolling, setIsRolling] = useState<boolean>(false);
     const [generatedAnimals, setGeneratedAnimals] = useState<Animal[]>([]);
     const [selectedAnimal, setSelectedAnimal] = useState<Animal | null>(null);
@@ -74,7 +77,9 @@ const Spinner = ({ animals }: SpinnerProps) => {
             name.innerText = randomAnimal.name;
             item.appendChild(name);
 
-            item.style.backgroundImage = `url(imgs/game/${randomAnimal.image})`;
+            const imageKey = `/src/imgs/game/${randomAnimal.image}`;
+            const image = preloadedImages[imageKey];
+            item.style.backgroundImage = `url(${image.src})`;
 
             items.appendChild(item);
             generatedList.push(randomAnimal);
@@ -123,7 +128,9 @@ const Spinner = ({ animals }: SpinnerProps) => {
             name.innerText = randomAnimal.name;
             item.appendChild(name);
 
-            item.style.backgroundImage = `url(imgs/game/${randomAnimal.image})`;
+            const imageKey = `/src/imgs/game/${randomAnimal.image}`;
+            const image = preloadedImages[imageKey];
+            item.style.backgroundImage = `url(${image.src})`;
 
             items.appendChild(item);
             generatedList.push(randomAnimal);
