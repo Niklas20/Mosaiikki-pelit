@@ -187,7 +187,7 @@ const Spinner = (props: SpinnerProps) => {
         const randomOffset = Math.floor(Math.random() * (itemWidth - centerBuffer * 2)) + centerBuffer;
         const finalTranslateTo = stopIndex * itemWidth - (visibleWidth / 2 - itemWidth / 2) + randomOffset;
 
-        items.style.transition = "transform 3s ease-out";
+        items.style.transition = "transform 5s ease-out";
         items.style.transform = `translateX(-${finalTranslateTo}px)`;
 
         setTimeout(() => {
