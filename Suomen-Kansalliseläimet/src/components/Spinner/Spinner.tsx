@@ -11,22 +11,20 @@ interface SpinnerProps {
     preloadedImages: Record<string, HTMLImageElement>;
 }
 
-const Spinner = (props: SpinnerProps) => {
-    const { animals, preloadedImages } = props;
-
-    const [isRolling, setIsRolling] = useState<boolean>(false);
+const Spinner = ({ animals, preloadedImages }: SpinnerProps) => {
+    const [isRolling, setIsRolling] = useState(false);
     const [generatedAnimals, setGeneratedAnimals] = useState<Animal[]>([]);
     const [selectedAnimal, setSelectedAnimal] = useState<Animal | null>(null);
-    const [itemsReady, setItemsReady] = useState<boolean>(false);
-    const [remainingAnimals, setRemainingAnimals] = useState<Animal[]>(animals);
+    const [itemsReady, setItemsReady] = useState(false);
+    const [remainingAnimals, setRemainingAnimals] = useState(animals);
     const [feedbackKey, setFeedbackKey] = useState<string | null>(null);
-    const [shouldGenerateItems, setShouldGenerateItems] = useState<boolean>(false);
-    const [initialItemsGenerated, setInitialItemsGenerated] = useState<boolean>(false);
-    const [hasAnswered, setHasAnswered] = useState<boolean>(true);
-    const [showConfetti, setShowConfetti] = useState<boolean>(false);
-    const [points, setPoints] = useState<number>(0);
-    const [isLastAnimal, setIsLastAnimal] = useState<boolean>(false);
-    const [gameEnd, setGameEnd] = useState<boolean>(false);
+    const [shouldGenerateItems, setShouldGenerateItems] = useState(false);
+    const [initialItemsGenerated, setInitialItemsGenerated] = useState(false);
+    const [hasAnswered, setHasAnswered] = useState(true);
+    const [showConfetti, setShowConfetti] = useState(false);
+    const [points, setPoints] = useState(0);
+    const [isLastAnimal, setIsLastAnimal] = useState(false);
+    const [gameEnd, setGameEnd] = useState(false);
 
     const translate = useTranslate();
     const { language } = useLanguage();
@@ -52,9 +50,13 @@ const Spinner = (props: SpinnerProps) => {
         updateAnimalNames();
     }, [language]);
 
-    const getAnimalName = (animal: Animal) => {
-        return animal.name[language];
-    };
+    useEffect(() => {
+        if (itemsReady) {
+            startSpin();
+        }
+    }, [itemsReady]);
+
+    const getAnimalName = (animal: Animal) => animal.name[language];
 
     const updateAnimalNames = () => {
         const items = document.querySelectorAll(".item-name") as NodeListOf<HTMLParagraphElement>;
@@ -85,7 +87,6 @@ const Spinner = (props: SpinnerProps) => {
                     const randomIndex = Math.floor(Math.random() * remainingAnimals.length);
                     randomAnimal = remainingAnimals[randomIndex];
                 } while (generatedList.includes(randomAnimal));
-
             } else if (remainingAnimals.length > 0) {
                 const randomIndex = Math.floor(Math.random() * remainingAnimals.length);
                 randomAnimal = remainingAnimals[randomIndex];
@@ -169,12 +170,6 @@ const Spinner = (props: SpinnerProps) => {
         setItemsReady(true);
     };
 
-    useEffect(() => {
-        if (itemsReady) {
-            startSpin();
-        }
-    }, [itemsReady]);
-
     const startSpin = () => {
         if (!itemsReady) return;
 
@@ -234,15 +229,15 @@ const Spinner = (props: SpinnerProps) => {
             setShowConfetti(true);
             setTimeout(() => setShowConfetti(false), 3000);
             setPoints((prevPoints) => {
-                const newPoinst = prevPoints + 1;
+                const newPoints = prevPoints + 1;
                 if (isLastAnimal) {
                     setGameEnd(true);
                     setTimeout(() => {
-                        navigate("/end", { state: { points: newPoinst } });
+                        navigate("/end", { state: { points: newPoints } });
                     }, 5000);
                 }
-                return newPoinst;
-            })
+                return newPoints;
+            });
         } else {
             setFeedbackKey(selectedAnimal.isFinnishNational ? "spinner-wrong-national" : "spinner-wrong-not-national");
             if (isLastAnimal) {
@@ -254,7 +249,7 @@ const Spinner = (props: SpinnerProps) => {
         }
 
         setHasAnswered(true);
-    }
+    };
 
     const handleSpinClick = () => {
         setIsRolling(true);
@@ -267,9 +262,7 @@ const Spinner = (props: SpinnerProps) => {
         <div className="spinner-container">
             <span className="points">{translate("spinner-points")}: {points}</span>
             <div className="item-wrapper">
-                <div className="items">
-
-                </div>
+                <div className="items"></div>
             </div>
             <button className="spin-button" onClick={handleSpinClick} disabled={isRolling || !hasAnswered || gameEnd}>
                 {isRolling ? translate("spinner-button-spinning") : translate("spinner-button-spin")}
