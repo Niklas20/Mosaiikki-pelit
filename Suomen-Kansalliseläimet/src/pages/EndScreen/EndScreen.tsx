@@ -1,5 +1,5 @@
 import "./EndScreen.css";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import authorData from "../../data/AuthorData.json";
 import AuthorPopup from "../../components/EndScreen/AuthorPopup/AuthorPopup";
@@ -10,6 +10,8 @@ const EndScreen = () => {
 
     const translate = useTranslate();
     const navigate = useNavigate();
+    const location = useLocation();
+    const points = location.state?.points;
 
     const handleButtonClick = () => {
         navigate("/pregame");
@@ -27,7 +29,7 @@ const EndScreen = () => {
     return (
         <div className="screen">
             <h1 className="end-screen-title">{translate("end-screen-title")}</h1>
-
+            <p className="end-screen-points">{translate("end-screen-points")}: {points}</p>
             <button
                 className="end-screen-restart-button"
                 onClick={handleButtonClick}

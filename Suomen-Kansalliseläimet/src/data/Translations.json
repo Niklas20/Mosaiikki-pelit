@@ -158,5 +158,13 @@
     "spinner-wrong-not-national": {
         "fi": "Väärin! Tämä eläin ei ole Suomen kansallissymboli.",
         "en": "Wrong! This animal is not a Finnish national symbol."
+    },
+    "spinner-points": {
+        "fi": "Pisteet",
+        "en": "Points"
+    },
+    "end-screen-points": {
+        "fi": "Pisteet",
+        "en": "Points"
     }
 }
