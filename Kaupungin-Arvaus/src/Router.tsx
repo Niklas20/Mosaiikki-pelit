@@ -16,12 +16,18 @@ import LoadingScreen from "./pages/LoadingScreen/LoadingScreen.tsx";
  */
 function Router() {
     const [loading, setLoading] = useState(true);
+    const [progress, setProgress] = useState(0);
     const [preloadedImages, setPreloadedImages] = useState<Record<string, HTMLImageElement>>({});
 
     useEffect(() => {
         let timeoutId: NodeJS.Timeout;
 
-        preloadImages()
+        // Pass onProgress function to update the progress state
+        preloadImages({
+            onProgress: (progressValue) => {
+                setProgress(progressValue);  // Update progress state
+            }
+        })
             .then((images) => {
                 const imagesMap: Record<string, HTMLImageElement> = {};
                 Object.keys(images).forEach((key, index) => {
@@ -30,7 +36,7 @@ function Router() {
                 setPreloadedImages(imagesMap);
 
                 timeoutId = setTimeout(() => {
-                    setLoading(false);
+                    setLoading(false);  // Hide loading screen after 1 second
                 }, 1000);
             })
             .catch((error: Error) => {
@@ -42,7 +48,7 @@ function Router() {
     }, []);
 
     if (loading) {
-        return <LoadingScreen />;
+        return <LoadingScreen percentageLoaded={progress} />;
     }
 
     const router = createBrowserRouter([

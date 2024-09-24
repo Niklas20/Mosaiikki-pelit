@@ -1,5 +1,5 @@
 .loading-screen {
-    background: linear-gradient(to bottom, rgb(138, 255, 92), rgb(49, 156, 255));
+    background: linear-gradient(to bottom, rgb(255, 115, 0), rgb(255, 206, 166));
 }
 
 .loadingText {
@@ -21,7 +21,7 @@
     width: 150px;
     height: 150px;
     border-radius: 50%;
-    background: conic-gradient(#00f7ff var(--percentage), #e0e0e0 0);
+    background: conic-gradient(#ff7300 var(--percentage), #e0e0e0 0);
 }
 
 .circular-progress::before {

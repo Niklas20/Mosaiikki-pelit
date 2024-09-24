@@ -1,15 +1,21 @@
 const imageModulesMain = import.meta.glob('../imgs/*.{png,jpg,jpeg,svg}', { eager: true });
 const imageModulesGameImgs = import.meta.glob('../imgs/gameImgs/*.{png,jpg,jpeg,svg}', { eager: true });
 const imageModulesEstimateImgs = import.meta.glob('../imgs/estimateImgs/*.{png,jpg,jpeg,svg}', { eager: true });
+const imageModulesVaakunaImgs = import.meta.glob('../imgs/vaakunaImgs/*.{png,jpg,jpeg,svg}', { eager: true });
 
-const imageModules = { ...imageModulesMain, ...imageModulesGameImgs, ...imageModulesEstimateImgs };
+const imageModules = { ...imageModulesMain, ...imageModulesGameImgs, ...imageModulesEstimateImgs, ...imageModulesVaakunaImgs };
+
+interface PreloadImagesOptions {
+    onProgress?: (progress: number) => void;
+}
 
 /**
  * Preload images
  * 
+ * @param {PreloadImagesOptions} options Options for the image preloading, such as the onProgress callback
  * @returns {Promise<HTMLImageElement[]>} Promise that resolves with an array of loaded images
  */
-export const preloadImages = (): Promise<HTMLImageElement[]> => {
+export const preloadImages = (options?: PreloadImagesOptions): Promise<HTMLImageElement[]> => {
     return new Promise((resolve, reject) => {
         const imagePaths = Object.keys(imageModules);
         const images: HTMLImageElement[] = [];
@@ -30,6 +36,13 @@ export const preloadImages = (): Promise<HTMLImageElement[]> => {
             img.onload = () => {
                 loadedImagesCount++;
                 images[index] = img;
+
+                // Call the onProgress callback with the progress percentage
+                if (options?.onProgress) {
+                    const progress = Math.round((loadedImagesCount / totalImages) * 100);
+                    options.onProgress(progress);
+                }
+
                 if (loadedImagesCount === totalImages) {
                     resolve(images);
                 }
