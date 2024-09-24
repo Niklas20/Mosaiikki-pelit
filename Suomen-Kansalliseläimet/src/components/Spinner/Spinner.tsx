@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Animal } from "../../utils/types";
 import "./Spinner.css";
 import { useTranslate } from "../../utils/translate";
+import { useLanguage } from "../../contexts/LanguageProvider";
 
 interface SpinnerProps {
     animals: Animal[];
@@ -22,6 +23,7 @@ const Spinner = (props: SpinnerProps) => {
     const [hasAnswered, setHasAnswered] = useState<boolean>(true);
 
     const translate = useTranslate();
+    const { language } = useLanguage();
 
     const feedback = feedbackKey ? translate(feedbackKey) : null;
 
@@ -38,6 +40,24 @@ const Spinner = (props: SpinnerProps) => {
             setShouldGenerateItems(false);
         }
     }, [shouldGenerateItems]);
+
+    useEffect(() => {
+        updateAnimalNames();
+    }, [language]);
+
+    const getAnimalName = (animal: Animal) => {
+        return animal.name[language];
+    };
+
+    const updateAnimalNames = () => {
+        const items = document.querySelectorAll(".item-name") as NodeListOf<HTMLParagraphElement>;
+        items.forEach((item, index) => {
+            const animal = generatedAnimals[index];
+            if (animal) {
+                item.innerText = getAnimalName(animal);
+            }
+        });
+    };
 
     const generateInitialItems = () => {
         const items = document.querySelector(".items") as HTMLDivElement;
@@ -74,7 +94,7 @@ const Spinner = (props: SpinnerProps) => {
 
             const name = document.createElement("p");
             name.className = "item-name";
-            name.innerText = randomAnimal.name;
+            name.innerText = getAnimalName(randomAnimal);
             item.appendChild(name);
 
             const imageKey = `/src/imgs/game/${randomAnimal.image}`;
@@ -84,6 +104,8 @@ const Spinner = (props: SpinnerProps) => {
             items.appendChild(item);
             generatedList.push(randomAnimal);
         }
+
+        setGeneratedAnimals(generatedList);
     };
 
     const generateItems = () => {
@@ -125,7 +147,7 @@ const Spinner = (props: SpinnerProps) => {
 
             const name = document.createElement("p");
             name.className = "item-name";
-            name.innerText = randomAnimal.name;
+            name.innerText = getAnimalName(randomAnimal);
             item.appendChild(name);
 
             const imageKey = `/src/imgs/game/${randomAnimal.image}`;
@@ -233,7 +255,7 @@ const Spinner = (props: SpinnerProps) => {
 
             {selectedAnimal && (
                 <div>
-                    <p className="selected-animal">{translate("spinner-you-got")}: {selectedAnimal.name}</p>
+                    <p className="selected-animal">{translate("spinner-you-got")}: {getAnimalName(selectedAnimal)}</p>
                     <p className="question">{translate("spinner-question")}</p>
                     <button className="answer-button" onClick={() => handleChoice(true)}>{translate("spinner-yes")}</button>
                     <button className="answer-button" onClick={() => handleChoice(false)}>{translate("spinner-no")}</button>
