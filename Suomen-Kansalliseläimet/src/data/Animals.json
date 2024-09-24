@@ -7,13 +7,17 @@
                 "en": "Bear"
             },
             "image": "karhu.jpg",
-            "isFinnishNational": true
+            "isFinnishNational": true,
+            "fact": {
+                "fi": "Karhu on Suomen Kansalliseläin. Karhut ovat suuria, vahvoja eläimiä, jotka elävät metsissä. He nukkuvat talven aikana talviunta. He rakastavat syödä marjoja, kalaa ja hunajaa!",
+                "en": "The Bear is the National Animal of Finland. Bears are big, strong animals that live in forests. They hibernate during the winter. They love to eat berries, fish, and honey!"
+            }
         },
         {
             "id": 2,
             "name": {
                 "fi": "Hirvi",
-                "en": "Elk"
+                "en": "Moose"
             },
             "image": "hirvi.jpg",
             "isFinnishNational": false
@@ -52,7 +56,11 @@
                 "en": "Finnish Spitz"
             },
             "image": "suomenpystykorva.jpg",
-            "isFinnishNational": true
+            "isFinnishNational": true,
+            "fact": {
+                "fi": "Suomenpystykorva on Suomen kansalliskoira ja se on hyvä metsästyksessä. He ovat tunnettuja ystävällisestä haukkumisestaan ​​ja erittäin älykkäistä!",
+                "en": "The Finnish Spitz is the National Dog of Finland and it's great at hunting. They are known for their friendly bark and being very smart!"
+            }
         },
         {
             "id": 7,
@@ -99,7 +107,11 @@
                 "en": "Perch"
             },
             "image": "ahven.jpg",
-            "isFinnishNational": true
+            "isFinnishNational": true,
+            "fact": {
+                "fi": "Ahven on Suomen kansalliskala. Heillä on vihertävä vartalo mustilla raidoilla. He asuvat järvissä ja joissa, ja he tykkäävät uida ryhmissä.",
+                "en": "The Perch is the National Fish of Finland. They have greenish bodies with black stripes. They live in lakes and rivers, and they like to swim in groups."
+            }
         },
         {
             "id": 2,
@@ -144,7 +156,11 @@
                 "en": "Whooper Swan"
             },
             "image": "laulujoutsen.jpg",
-            "isFinnishNational": true
+            "isFinnishNational": true,
+            "fact": {
+                "fi": "Laulujoutsen on Suomen kansallislintu. Sillä on pitkä kaula ja se pitää kovia tuuttaus ääniä. He rakastavat uimista järvissä ja lentävät pitkiä matkoja muuttessaan.",
+                "en": "The Whooper swan is the National Bird of Finland. It has a long neck and makes loud honking sounds. They love swimming in lakes and fly long distances when migrating."
+            }
         },
         {
             "id": 7,
@@ -188,10 +204,14 @@
             "id": 1,
             "name": {
                 "fi": "Seitsenpistepirkko",
-                "en": "Seven-point Punch"
+                "en": "Seven-spotted ladybug"
             },
             "image": "seitsenpistepirkko.jpg",
-            "isFinnishNational": true
+            "isFinnishNational": true,
+            "fact": {
+                "fi": "Seitsenpistepirkko on Suomen kansallishyönteinen. Heillä on seitsemän mustaa täplää punaisessa selässään. Ne voivat joskus lentää ympäriinsä, kun sää on lämmin!",
+                "en": "The Seven-spotted ladybug is the National Insect of Finland. They have seven black spots on their red backs. They can sometimes fly around when the weather is warm!"
+            }
         },
         {
             "id": 2,
@@ -236,7 +256,11 @@
                 "en": "Holly Blue"
             },
             "image": "paatsamasinisiipi.jpg",
-            "isFinnishNational": true
+            "isFinnishNational": true,
+            "fact": {
+                "fi": "Paatsamasinisiipi on Suomen kansallisperhonen. He rakastavat lentämistä metsissä ja puutarhoissa, etenkin pensaiden lähellä. He auttavat kasveja levittämällä siitepölyä.",
+                "en": "The Holly blue is the National Butterfly of Finland. They love flying in forests and gardens, especially near bushes. They help plants by spreading pollen."
+            }
         },
         {
             "id": 7,
@@ -251,7 +275,7 @@
             "id": 8,
             "name": {
                 "fi": "Sitruunaperhonen",
-                "en": "Brimstone"
+                "en": "Common Brimstone"
             },
             "image": "sitruunaperhonen.jpg",
             "isFinnishNational": false
@@ -283,7 +307,11 @@
                 "en": "Lily of the Valley"
             },
             "image": "kielo.jpg",
-            "isFinnishNational": true
+            "isFinnishNational": true,
+            "fact": {
+                "fi": "Kielo on Suomen kansalliskukka. Siinä on pieniä, kellomaisia ​​valkoisia kukkia, jotka tuoksuvat erittäin hyvältä. Mutta ole varovainen, vaikka se on kaunista, se on myös myrkyllistä syödä!",
+                "en": "Lily of the valley is Finlands national flower. It has small, bell-shaped white flowers that smell very nice. But be careful, while it’s pretty, it’s also poisonous to eat!"
+            }
         },
         {
             "id": 2,
@@ -328,7 +356,11 @@
                 "en": "Silver Birch"
             },
             "image": "rauduskoivu.jpg",
-            "isFinnishNational": true
+            "isFinnishNational": true,
+            "fact": {
+                "fi": "Koivu on Suomen kansallispuu. Sillä on valkoinen kuori ja sen lehdet muuttuvat keltaisiksi syksyllä. Koivut ovat vahvoja ja voivat kasvaa monissa paikoissa!",
+                "en": "The silver birch is Finlands national tree. It has white bark and its leaves turn yellow in autumn. Birch trees are strong and can grow in many places!"
+            }
         },
         {
             "id": 7,

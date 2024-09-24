@@ -34,4 +34,8 @@ export interface Animal {
     };
     image: string;
     isFinnishNational: boolean;
+    fact: {
+        fi: string;
+        en: string;
+    };
 }

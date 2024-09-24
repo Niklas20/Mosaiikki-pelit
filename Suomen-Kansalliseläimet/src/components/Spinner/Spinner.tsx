@@ -5,6 +5,7 @@ import { useTranslate } from "../../utils/translate";
 import { useLanguage } from "../../contexts/LanguageProvider";
 import ConfettiComponent from "../../components/Confetti/Confetti";
 import { useNavigate } from "react-router-dom";
+import AnimalFactModal from "../AnimalFactModal/AnimalFactModal";
 
 interface SpinnerProps {
     animals: Animal[];
@@ -25,6 +26,7 @@ const Spinner = ({ animals, preloadedImages }: SpinnerProps) => {
     const [points, setPoints] = useState(0);
     const [isLastAnimal, setIsLastAnimal] = useState(false);
     const [gameEnd, setGameEnd] = useState(false);
+    const [isModalOpen, setIsModalOpen] = useState(false);
 
     const translate = useTranslate();
     const { language } = useLanguage();
@@ -224,7 +226,10 @@ const Spinner = ({ animals, preloadedImages }: SpinnerProps) => {
     const handleChoice = (isNational: boolean) => {
         if (!selectedAnimal) return;
 
-        if (isNational === selectedAnimal.isFinnishNational) {
+        const isCorrectAnswer = isNational === selectedAnimal.isFinnishNational;
+        const hasFact = selectedAnimal.fact && selectedAnimal.fact.en;
+
+        if (isCorrectAnswer) {
             setFeedbackKey(translate("spinner-correct"));
             setShowConfetti(true);
             setTimeout(() => setShowConfetti(false), 3000);
@@ -238,6 +243,11 @@ const Spinner = ({ animals, preloadedImages }: SpinnerProps) => {
                 }
                 return newPoints;
             });
+
+            // Only open the modal if the correct answer was selected and the animal has a fact
+            if (hasFact) {
+                setIsModalOpen(true);
+            }
         } else {
             setFeedbackKey(selectedAnimal.isFinnishNational ? "spinner-wrong-national" : "spinner-wrong-not-national");
             if (isLastAnimal) {
@@ -251,11 +261,16 @@ const Spinner = ({ animals, preloadedImages }: SpinnerProps) => {
         setHasAnswered(true);
     };
 
+
     const handleSpinClick = () => {
         setIsRolling(true);
         setFeedbackKey(null);
         setSelectedAnimal(null);
         generateItems();
+    };
+
+    const handleCloseModal = () => {
+        setIsModalOpen(false);
     };
 
     return (
@@ -267,6 +282,14 @@ const Spinner = ({ animals, preloadedImages }: SpinnerProps) => {
             <button className="spin-button" onClick={handleSpinClick} disabled={isRolling || !hasAnswered || gameEnd}>
                 {isRolling ? translate("spinner-button-spinning") : translate("spinner-button-spin")}
             </button>
+
+            {isModalOpen && selectedAnimal && (
+                <AnimalFactModal
+                    animal={selectedAnimal}
+                    preloadedImages={preloadedImages}
+                    onClose={() => handleCloseModal()}
+                />
+            )}
 
             {selectedAnimal && (
                 <div>

@@ -18,11 +18,13 @@
 
 .end-screen-points {
     position: absolute;
-    font-size: 3.6rem;
-    left: 2%;
-    top: 20%;
+    font-size: 5rem;
+    transform: translateX(-50%);
+    left: 50%;
+    top: 30%;
     color: #ff9100;
     text-shadow: 2px 2px 1px #744100;
+    width: 445px;
 }
 
 .end-screen-restart-button {

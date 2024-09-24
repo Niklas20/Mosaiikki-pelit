@@ -29,7 +29,7 @@ const EndScreen = () => {
     return (
         <div className="screen">
             <h1 className="end-screen-title">{translate("end-screen-title")}</h1>
-            <p className="end-screen-points">{translate("end-screen-points")}: {points}</p>
+            <p className="end-screen-points">{translate("end-screen-points")}: {points}/10</p>
             <button
                 className="end-screen-restart-button"
                 onClick={handleButtonClick}

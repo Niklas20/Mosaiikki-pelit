@@ -1,5 +1,4 @@
-.info-screen-container
-{
+.info-screen-container {
     position: absolute;
     background-color: white;
     width: 80%;
@@ -10,8 +9,8 @@
     border-radius: 15%;
     filter: drop-shadow(0px 0px 10px black);
     box-shadow: inset rgba(0, 0, 0, 0.5) -3px -3px 5px,
-    inset rgba(255, 255, 255, 0.8) 3px 3px 5px,
-    rgba(0, 0, 0, 0.7) 3px 3px 5px -3px;
+        inset rgba(255, 255, 255, 0.8) 3px 3px 5px,
+        rgba(0, 0, 0, 0.7) 3px 3px 5px -3px;
     padding: 30px;
     display: flex;
     flex-direction: column;
@@ -20,15 +19,13 @@
     text-align: center;
 }
 
-.info-screen-title
-{
+.info-screen-title {
     font-size: 2rem;
     margin-bottom: 10px;
     color: #333333;
 }
 
-.info-screen-text
-{
+.info-screen-text {
     font-size: 1.38rem;
     color: #555555;
     line-height: 1.3;
@@ -38,8 +35,7 @@
     width: 350px;
 }
 
-.info-screen-button
-{
+.info-screen-button {
     font-size: 1.5rem;
     border: 1px solid black;
     border-radius: 10px;
@@ -47,15 +43,13 @@
     margin-top: 30px;
 }
 
-.info-screen-button:hover
-{
+.info-screen-button:hover {
     background-color: rgb(200, 200, 200);
     transform: scale(0.95);
     cursor: url("../../imgs/assets/pointer.png"), pointer;
 }
 
-.info-screen-button:active
-{
+.info-screen-button:active {
     transform: scale(0.90);
     bottom: 6%;
     cursor: url("../../imgs/assets/pointer.png"), pointer;
@@ -69,7 +63,7 @@
 
     width: 100px;
     height: 100px;
-    
+
     background-image: url("../../imgs/assets/ss1.jpg");
     background-position: center;
     background-size: contain;
@@ -87,7 +81,7 @@
 
     width: 110px;
     height: 120px;
-    
+
     background-image: url("../../imgs/assets/ss2.jpg");
     background-position: center;
     background-size: contain;
@@ -105,7 +99,7 @@
 
     width: 130px;
     height: 75px;
-    
+
     background-image: url("../../imgs/assets/ss3.jpg");
     background-position: center;
     background-size: contain;
@@ -113,4 +107,17 @@
 
     border-radius: 20px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.animal-image {
+    position: absolute;
+    transform: translateX(-50%);
+    left: 50%;
+}
+
+.animal-fact {
+    position: absolute;
+    transform: translateX(-50%);
+    left: 50%;
+    bottom: 30%;
 }
