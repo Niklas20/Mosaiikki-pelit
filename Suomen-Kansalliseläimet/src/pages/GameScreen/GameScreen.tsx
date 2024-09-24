@@ -35,7 +35,6 @@ const GameScreen = (props: GameScreenProps) => {
             >
                 {translate("game-screen-back-button")}
             </button>
-
         </div>
     );
 };

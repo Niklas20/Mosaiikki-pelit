@@ -1,20 +1,19 @@
-import { useTranslate } from "@/Utils/translate";
 import "./LoadingScreen.css";
 
-/**
- * Loading screen component
- * 
- * @returns {JSX.Element} Loading screen component
- */
-const LoadingScreen = () => {
-    const translate = useTranslate();
+interface LoadingScreenProps {
+    percentageLoaded: number;
+}
+
+const LoadingScreen = (props: LoadingScreenProps) => {
+    const { percentageLoaded } = props;
 
     return (
         <div className="screen loading-screen">
-            <div className="ring">
-                <div className="loadingText">{translate("loading-screen-text")}</div>
-                <span></span>
-            </div>
+            <div
+                className="circular-progress"
+                style={{ '--percentage': `${percentageLoaded * 3.6}deg` } as React.CSSProperties}
+            ></div>
+            <div className="loadingText">{percentageLoaded}%</div>
         </div>
     );
 }
