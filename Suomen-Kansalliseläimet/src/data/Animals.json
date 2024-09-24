@@ -1,0 +1,370 @@
+{
+    "1": [
+        {
+            "id": 1,
+            "name": {
+                "fi": "Karhu",
+                "en": "Bear"
+            },
+            "image": "karhu.jpg",
+            "isFinnishNational": true
+        },
+        {
+            "id": 2,
+            "name": {
+                "fi": "Hirvi",
+                "en": "Elk"
+            },
+            "image": "hirvi.jpg",
+            "isFinnishNational": false
+        },
+        {
+            "id": 3,
+            "name": {
+                "fi": "Susi",
+                "en": "Wolf"
+            },
+            "image": "susi.jpg",
+            "isFinnishNational": false
+        },
+        {
+            "id": 4,
+            "name": {
+                "fi": "Ilves",
+                "en": "Lynx"
+            },
+            "image": "ilves.jpg",
+            "isFinnishNational": false
+        },
+        {
+            "id": 5,
+            "name": {
+                "fi": "Ahma",
+                "en": "Wolverine"
+            },
+            "image": "ahma.jpg",
+            "isFinnishNational": false
+        },
+        {
+            "id": 6,
+            "name": {
+                "fi": "Suomenpystykorva",
+                "en": "Finnish Spitz"
+            },
+            "image": "suomenpystykorva.jpg",
+            "isFinnishNational": true
+        },
+        {
+            "id": 7,
+            "name": {
+                "fi": "Saksanpaimenkoira",
+                "en": "German Shepherd"
+            },
+            "image": "saksanpaimenkoira.jpg",
+            "isFinnishNational": false
+        },
+        {
+            "id": 8,
+            "name": {
+                "fi": "Chihuahua",
+                "en": "Chihuahua"
+            },
+            "image": "chihuahua.jpg",
+            "isFinnishNational": false
+        },
+        {
+            "id": 9,
+            "name": {
+                "fi": "Siperianhusky",
+                "en": "Siberian Husky"
+            },
+            "image": "siperianhusky.jpg",
+            "isFinnishNational": false
+        },
+        {
+            "id": 10,
+            "name": {
+                "fi": "Rottweiler",
+                "en": "Rottweiler"
+            },
+            "image": "rottweiler.jpg",
+            "isFinnishNational": false
+        }
+    ],
+    "2": [
+        {
+            "id": 1,
+            "name": {
+                "fi": "Ahven",
+                "en": "Perch"
+            },
+            "image": "ahven.jpg",
+            "isFinnishNational": true
+        },
+        {
+            "id": 2,
+            "name": {
+                "fi": "Hauki",
+                "en": "Pike"
+            },
+            "image": "hauki.jpg",
+            "isFinnishNational": false
+        },
+        {
+            "id": 3,
+            "name": {
+                "fi": "Kuha",
+                "en": "Zander"
+            },
+            "image": "kuha.jpg",
+            "isFinnishNational": false
+        },
+        {
+            "id": 4,
+            "name": {
+                "fi": "Kiiski",
+                "en": "Ruffe"
+            },
+            "image": "kiiski.jpg",
+            "isFinnishNational": false
+        },
+        {
+            "id": 5,
+            "name": {
+                "fi": "Lohi",
+                "en": "Salmon"
+            },
+            "image": "lohi.jpg",
+            "isFinnishNational": false
+        },
+        {
+            "id": 6,
+            "name": {
+                "fi": "Laulujoutsen",
+                "en": "Whooper Swan"
+            },
+            "image": "laulujoutsen.jpg",
+            "isFinnishNational": true
+        },
+        {
+            "id": 7,
+            "name": {
+                "fi": "Sinitiainen",
+                "en": "Blue Tit"
+            },
+            "image": "sinitiainen.jpg",
+            "isFinnishNational": false
+        },
+        {
+            "id": 8,
+            "name": {
+                "fi": "Talitiainen",
+                "en": "Great Tit"
+            },
+            "image": "talitiainen.jpg",
+            "isFinnishNational": false
+        },
+        {
+            "id": 9,
+            "name": {
+                "fi": "Varis",
+                "en": "Crow"
+            },
+            "image": "varis.jpg",
+            "isFinnishNational": false
+        },
+        {
+            "id": 10,
+            "name": {
+                "fi": "Käpytikka",
+                "en": "Great Spotted Woodpecker"
+            },
+            "image": "kapytikka.jpg",
+            "isFinnishNational": false
+        }
+    ],
+    "3": [
+        {
+            "id": 1,
+            "name": {
+                "fi": "Seitsenpistepirkko",
+                "en": "Seven-point Punch"
+            },
+            "image": "seitsenpistepirkko.jpg",
+            "isFinnishNational": true
+        },
+        {
+            "id": 2,
+            "name": {
+                "fi": "Hyttynen",
+                "en": "Mosquito"
+            },
+            "image": "hyttynen.jpg",
+            "isFinnishNational": false
+        },
+        {
+            "id": 3,
+            "name": {
+                "fi": "Kärpänen",
+                "en": "Fly"
+            },
+            "image": "karpanen.jpg",
+            "isFinnishNational": false
+        },
+        {
+            "id": 4,
+            "name": {
+                "fi": "Sudenkorento",
+                "en": "Dragonfly"
+            },
+            "image": "sudenkorento.jpg",
+            "isFinnishNational": false
+        },
+        {
+            "id": 5,
+            "name": {
+                "fi": "Kimalainen",
+                "en": "Bumblebee"
+            },
+            "image": "kimalainen.jpg",
+            "isFinnishNational": false
+        },
+        {
+            "id": 6,
+            "name": {
+                "fi": "Paatsamasinisiipi",
+                "en": "Holly Blue"
+            },
+            "image": "paatsamasinisiipi.jpg",
+            "isFinnishNational": true
+        },
+        {
+            "id": 7,
+            "name": {
+                "fi": "Nokkosperhonen",
+                "en": "Small Tortoiseshell"
+            },
+            "image": "nokkosperhonen.jpg",
+            "isFinnishNational": false
+        },
+        {
+            "id": 8,
+            "name": {
+                "fi": "Sitruunaperhonen",
+                "en": "Brimstone"
+            },
+            "image": "sitruunaperhonen.jpg",
+            "isFinnishNational": false
+        },
+        {
+            "id": 9,
+            "name": {
+                "fi": "Herukkaperhonen",
+                "en": "Comma"
+            },
+            "image": "herukkaperhonen.jpg",
+            "isFinnishNational": false
+        },
+        {
+            "id": 10,
+            "name": {
+                "fi": "Neitoperhonen",
+                "en": "Peacock"
+            },
+            "image": "neitoperhonen.jpg",
+            "isFinnishNational": false
+        }
+    ],
+    "4": [
+        {
+            "id": 1,
+            "name": {
+                "fi": "Kielo",
+                "en": "Lily of the Valley"
+            },
+            "image": "kielo.jpg",
+            "isFinnishNational": true
+        },
+        {
+            "id": 2,
+            "name": {
+                "fi": "Ahokeltano",
+                "en": "Hawkweed"
+            },
+            "image": "ahokeltanot.jpg",
+            "isFinnishNational": false
+        },
+        {
+            "id": 3,
+            "name": {
+                "fi": "Kissankello",
+                "en": "Harebell"
+            },
+            "image": "kissankello.jpg",
+            "isFinnishNational": false
+        },
+        {
+            "id": 4,
+            "name": {
+                "fi": "Alaskanlupiini",
+                "en": "Nootka Lupine"
+            },
+            "image": "alaskanlupiini.jpg",
+            "isFinnishNational": false
+        },
+        {
+            "id": 5,
+            "name": {
+                "fi": "Auringonkukka",
+                "en": "Sunflower"
+            },
+            "image": "auringonkukka.jpg",
+            "isFinnishNational": false
+        },
+        {
+            "id": 6,
+            "name": {
+                "fi": "Rauduskoivu",
+                "en": "Silver Birch"
+            },
+            "image": "rauduskoivu.jpg",
+            "isFinnishNational": true
+        },
+        {
+            "id": 7,
+            "name": {
+                "fi": "Vaahtera",
+                "en": "Maple"
+            },
+            "image": "vaahtera.jpg",
+            "isFinnishNational": false
+        },
+        {
+            "id": 8,
+            "name": {
+                "fi": "Mänty",
+                "en": "Pine"
+            },
+            "image": "manty.jpg",
+            "isFinnishNational": false
+        },
+        {
+            "id": 9,
+            "name": {
+                "fi": "Kuusi",
+                "en": "Spruce"
+            },
+            "image": "kuusi.jpg",
+            "isFinnishNational": false
+        },
+        {
+            "id": 10,
+            "name": {
+                "fi": "Tervaleppä",
+                "en": "Black Alder"
+            },
+            "image": "tervaleppa.jpg",
+            "isFinnishNational": false
+        }
+    ]
+}

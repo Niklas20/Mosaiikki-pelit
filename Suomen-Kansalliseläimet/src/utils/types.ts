@@ -28,7 +28,10 @@ export interface Author {
 
 export interface Animal {
     id: number;
-    name: string;
+    name: {
+        fi: string;
+        en: string;
+    };
     image: string;
     isFinnishNational: boolean;
 }
