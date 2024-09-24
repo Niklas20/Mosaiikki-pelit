@@ -1,10 +1,13 @@
-import React from "react";
 import "./GameScreen.css";
 import { useLocation } from "react-router-dom";
 import { Animal } from "../../utils/types";
 import Spinner from "../../components/Spinner/Spinner";
 import { useTranslate } from "../../utils/translate";
 import { useNavigate } from "react-router-dom";
+
+interface GameScreenProps {
+    preloadedImages: Record<string, HTMLImageElement>;
+}
 
 const animals: { [key: number]: Animal[] } = {
     1: [ // Kansalliseläin ja koira
@@ -57,7 +60,9 @@ const animals: { [key: number]: Animal[] } = {
     ]
 }
 
-const GameScreen: React.FC = () => {
+const GameScreen = (props: GameScreenProps) => {
+    const { preloadedImages } = props;
+
     const location = useLocation();
     const spinnerType = location.state?.spinnerType;
     const selectedAnimals = animals[spinnerType];
@@ -72,7 +77,7 @@ const GameScreen: React.FC = () => {
     return (
         <div className="screen">
             {selectedAnimals.length > 0 && (
-                <Spinner animals={selectedAnimals} />
+                <Spinner animals={selectedAnimals} preloadedImages={preloadedImages} />
             )}
 
             <button
