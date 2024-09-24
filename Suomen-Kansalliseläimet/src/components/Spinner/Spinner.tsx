@@ -263,8 +263,8 @@ const Spinner = (props: SpinnerProps) => {
                 <div>
                     <p className="selected-animal">{translate("spinner-you-got")}: {getAnimalName(selectedAnimal)}</p>
                     <p className="question">{translate("spinner-question")}</p>
-                    <button className="answer-button" onClick={() => handleChoice(true)}>{translate("spinner-yes")}</button>
-                    <button className="answer-button" onClick={() => handleChoice(false)}>{translate("spinner-no")}</button>
+                    <button className="answer-button" onClick={() => handleChoice(true)} disabled={hasAnswered}>{translate("spinner-yes")}</button>
+                    <button className="answer-button" onClick={() => handleChoice(false)} disabled={hasAnswered}>{translate("spinner-no")}</button>
                 </div>
             )}
 

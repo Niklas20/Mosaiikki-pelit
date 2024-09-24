@@ -135,6 +135,12 @@
     cursor: url("../../imgs/assets/pointer.png"), pointer;
 }
 
+.answer-button:disabled {
+    background-color: #ccc;
+    color: #fff;
+    cursor: url("../../imgs/assets/cursor.png"), not-allowed;
+}
+
 .feedback-message {
     margin-top: 15px;
     font-size: 16px;
