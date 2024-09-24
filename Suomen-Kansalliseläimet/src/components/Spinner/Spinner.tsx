@@ -4,6 +4,7 @@ import "./Spinner.css";
 import { useTranslate } from "../../utils/translate";
 import { useLanguage } from "../../contexts/LanguageProvider";
 import ConfettiComponent from "../../components/Confetti/Confetti";
+import { useNavigate } from "react-router-dom";
 
 interface SpinnerProps {
     animals: Animal[];
@@ -23,9 +24,13 @@ const Spinner = (props: SpinnerProps) => {
     const [initialItemsGenerated, setInitialItemsGenerated] = useState<boolean>(false);
     const [hasAnswered, setHasAnswered] = useState<boolean>(true);
     const [showConfetti, setShowConfetti] = useState<boolean>(false);
+    const [points, setPoints] = useState<number>(0);
+    const [isLastAnimal, setIsLastAnimal] = useState<boolean>(false);
+    const [gameEnd, setGameEnd] = useState<boolean>(false);
 
     const translate = useTranslate();
     const { language } = useLanguage();
+    const navigate = useNavigate();
 
     const feedback = feedbackKey ? translate(feedbackKey) : null;
 
@@ -200,9 +205,13 @@ const Spinner = (props: SpinnerProps) => {
 
             setSelectedAnimal(selectedAnimal);
 
-            setRemainingAnimals((prevRemainingAnimals) =>
-                prevRemainingAnimals.filter((animal) => animal.id !== selectedAnimal.id)
-            );
+            setRemainingAnimals((prevRemainingAnimals) => {
+                const newRemainingAnimals = prevRemainingAnimals.filter((animal) => animal.id !== selectedAnimal.id);
+                if (newRemainingAnimals.length === 0) {
+                    setIsLastAnimal(true);
+                }
+                return newRemainingAnimals;
+            });
 
             const previousSelected = items.querySelector(".selected");
             if (previousSelected) {
@@ -222,40 +231,47 @@ const Spinner = (props: SpinnerProps) => {
 
         if (isNational === selectedAnimal.isFinnishNational) {
             setFeedbackKey(translate("spinner-correct"));
-            console.log("suppinkia")
             setShowConfetti(true);
             setTimeout(() => setShowConfetti(false), 3000);
+            setPoints((prevPoints) => {
+                const newPoinst = prevPoints + 1;
+                if (isLastAnimal) {
+                    setGameEnd(true);
+                    setTimeout(() => {
+                        navigate("/end", { state: { points: newPoinst } });
+                    }, 5000);
+                }
+                return newPoinst;
+            })
         } else {
             setFeedbackKey(selectedAnimal.isFinnishNational ? "spinner-wrong-national" : "spinner-wrong-not-national");
-            console.log("suppinkia2")
+            if (isLastAnimal) {
+                setGameEnd(true);
+                setTimeout(() => {
+                    navigate("/end", { state: { points } });
+                }, 5000);
+            }
         }
 
         setHasAnswered(true);
     }
 
     const handleSpinClick = () => {
-        if (remainingAnimals.length === 0) {
-            setRemainingAnimals(animals);
-            setIsRolling(true);
-            setFeedbackKey(null);
-            setSelectedAnimal(null);
-            setShouldGenerateItems(true);
-        } else {
-            setIsRolling(true);
-            setFeedbackKey(null);
-            setSelectedAnimal(null);
-            generateItems();
-        }
+        setIsRolling(true);
+        setFeedbackKey(null);
+        setSelectedAnimal(null);
+        generateItems();
     };
 
     return (
         <div className="spinner-container">
+            <span className="points">{translate("spinner-points")}: {points}</span>
             <div className="item-wrapper">
                 <div className="items">
 
                 </div>
             </div>
-            <button className="spin-button" onClick={handleSpinClick} disabled={isRolling || !hasAnswered}>
+            <button className="spin-button" onClick={handleSpinClick} disabled={isRolling || !hasAnswered || gameEnd}>
                 {isRolling ? translate("spinner-button-spinning") : translate("spinner-button-spin")}
             </button>
 

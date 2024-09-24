@@ -1,5 +1,4 @@
-.end-screen-title
-{
+.end-screen-title {
     position: absolute;
 
     font-size: 4.8rem;
@@ -17,8 +16,16 @@
     filter: drop-shadow(4px 4px 2px hsl(29, 100%, 18%));
 }
 
-.end-screen-restart-button
-{
+.end-screen-points {
+    position: absolute;
+    font-size: 3.6rem;
+    left: 2%;
+    top: 20%;
+    color: #ff9100;
+    text-shadow: 2px 2px 1px #744100;
+}
+
+.end-screen-restart-button {
     box-shadow: inset 1px 39px 16px -12px #ffbf6a;
     background-color: #ff9100;
     border-radius: 10px;
@@ -38,8 +45,7 @@
     bottom: 3%;
 }
 
-.end-screen-restart-button:hover
-{
+.end-screen-restart-button:hover {
     background-color: #ff9100;
     position: absolute;
     transform: scale(0.95);
@@ -47,14 +53,12 @@
     cursor: url("../../imgs/assets/pointer.png"), pointer;
 }
 
-.end-screen-restart-button:active
-{
+.end-screen-restart-button:active {
     position: absolute;
     bottom: 2%;
 }
 
-.end-screen-author-container
-{
+.end-screen-author-container {
     position: fixed;
     bottom: 20px;
     left: 20px;
@@ -67,29 +71,25 @@
     max-width: 300px;
 }
 
-.author-title
-{
+.author-title {
     font-size: 1.5rem;
     margin-bottom: 10px;
     text-align: center;
     color: #ff9100;
 }
 
-.author
-{
+.author {
     margin-bottom: 10px;
     cursor: pointer;
 }
 
-.author p
-{
+.author p {
     margin: 0;
     font-size: 1.2rem;
     transition: color 0.3s ease;
 }
 
-.author:hover p
-{
+.author:hover p {
     color: #ff9100;
     cursor: url("../../imgs/assets/pointer.png"), pointer;
 }
