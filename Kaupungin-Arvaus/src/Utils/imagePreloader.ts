@@ -15,10 +15,10 @@ interface PreloadImagesOptions {
  * @param {PreloadImagesOptions} options Options for the image preloading, such as the onProgress callback
  * @returns {Promise<HTMLImageElement[]>} Promise that resolves with an array of loaded images
  */
-export const preloadImages = (options?: PreloadImagesOptions): Promise<HTMLImageElement[]> => {
+export const preloadImages = (options?: PreloadImagesOptions): Promise<Record<string, HTMLImageElement>> => {
     return new Promise((resolve, reject) => {
         const imagePaths = Object.keys(imageModules);
-        const images: HTMLImageElement[] = [];
+        const images: Record<string, HTMLImageElement> = {};
         let loadedImagesCount = 0;
         const totalImages = imagePaths.length;
 

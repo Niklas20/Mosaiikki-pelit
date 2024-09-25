@@ -5,8 +5,17 @@ import authorData from "@/data/AuthorData.json";
 import AuthorPopup from "@/components/EndScreen/AuthorPopup/AuthorPopup";
 import { useTranslate } from "@/Utils/translate";
 import HintContainer from "@/components/GameScreen/HintContainer/HintContainer";
+import { findGameImage } from "@/Utils/gameUtils";
 
-const EndScreen = () => {
+interface EndScreenProps {
+    preloadedImages: Record<string, HTMLImageElement>;
+}
+
+const EndScreen = (props: EndScreenProps) => {
+    const { preloadedImages } = props;
+    console.log("Preloaded images in EndScreen", preloadedImages);
+
+
     const [visibleAuthors, setVisibleAuthors] = useState<string | null>(null);
 
     const navigate = useNavigate();
@@ -16,7 +25,8 @@ const EndScreen = () => {
     const points = location.state?.points;
     const city = location.state?.city;
     const timeElapsed = location.state?.timeElapsed;
-    const hints = location.state?.hints || [];  
+    const hints = location.state?.hints || [];
+
 
     const handleButtonClick = () => {
         navigate("/game");
@@ -46,7 +56,7 @@ const EndScreen = () => {
             {city?.coa && (
                 <img
                     className="end-screen-coa"
-                    src={city.coa}
+                    src={findGameImage(city.coa, preloadedImages)?.src}
                     alt={`${city.name} Coat of Arms`}
                 />
             )}

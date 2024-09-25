@@ -19,3 +19,16 @@ export const getRandomCity = (cities: City[]): City => {
 
     return randomCity;
 }
+
+// Find image from preloaded images, if it does not exist return null
+export const findGameImage = (imagePath: string, images: Record<string, HTMLImageElement>) => {
+    const newImagePath = imagePath.replace(/\.(jpg|jpeg|png|svg)$/, "");
+
+    for (const key in images) {
+        if (images[key].src.includes(newImagePath)) {
+            console.log("Found image", images[key]);
+            return images[key];
+        }
+    }
+    return null;
+};
