@@ -16,39 +16,29 @@ import LoadingScreen from "./pages/LoadingScreen/LoadingScreen.tsx";
  */
 function Router() {
     const [loading, setLoading] = useState(true);
-    const [progress, setProgress] = useState(0);
+    const [percentageLoaded, setPercentageLoaded] = useState(0);
     const [preloadedImages, setPreloadedImages] = useState<Record<string, HTMLImageElement>>({});
 
     useEffect(() => {
-        let timeoutId: NodeJS.Timeout;
-
         // Pass onProgress function to update the progress state
         preloadImages({
-            onProgress: (progressValue) => {
-                setProgress(progressValue);  // Update progress state
+            onProgress: (percentage) => {
+                setPercentageLoaded(percentage);  // Update progress state
             }
         })
             .then((images) => {
-                const imagesMap: Record<string, HTMLImageElement> = {};
-                Object.keys(images).forEach((key, index) => {
-                    imagesMap[key] = images[index];
-                });
-                setPreloadedImages(imagesMap);
+                setPreloadedImages(images);
 
-                timeoutId = setTimeout(() => {
-                    setLoading(false);  // Hide loading screen after 1 second
-                }, 1000);
+                setLoading(false);
             })
             .catch((error: Error) => {
                 console.error('Error preloading images:', error);
                 setLoading(false);
             });
-
-        return () => { clearTimeout(timeoutId); }
     }, []);
 
     if (loading) {
-        return <LoadingScreen percentageLoaded={progress} />;
+        return <LoadingScreen percentageLoaded={percentageLoaded} />;
     }
 
     const router = createBrowserRouter([
@@ -59,7 +49,7 @@ function Router() {
                 { path: '/', element: <MainMenu /> },
                 { path: '/info', element: <InfoScreen /> },
                 { path: '/game', element: <GameScreen preloadedImages={preloadedImages} /> },
-                { path: '/end', element: <EndScreen /> },
+                { path: '/end', element: <EndScreen preloadedImages={preloadedImages} /> },
                 { path: '/motive', element: <MotiveScreen /> },
                 { path: '*', element: <MainMenu /> }
             ]

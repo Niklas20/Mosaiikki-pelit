@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import CityData from "../../data/Cities.json";
 import "./GameScreen.css";
-import { getRandomCity } from "@/Utils/gameUtils";
+import { findGameImage, getRandomCity } from "@/Utils/gameUtils";
 import { City, Hint } from "@/Utils/types";
 import SearchBarWithPills from "@/components/GameScreen/SearchBarWithPills/SearchBarWithPills";
 import HintContainer from "@/components/GameScreen/HintContainer/HintContainer";
@@ -48,7 +48,7 @@ const GameScreen = (props: GameScreenProps) => {
     const navigate = useNavigate();
     const translate = useTranslate();
     const { isGameOver, endGame, resetGameState } = useGameOver();
-    
+
     const handleButtonClick = () => {
         resetGameState();
         resetGame();
@@ -115,56 +115,47 @@ const GameScreen = (props: GameScreenProps) => {
     };
 
     const generateCityHints = (city: City): Hint[] => {
+        const estimate_image = findGameImage(city.estimate_image, props.preloadedImages)?.src;
         return [
             { hint: translate("hint-population", { population: city.population.toString() }) },
             { hint: translate("hint-founded", { founded: city.founded.toString() }) },
             { hint: translate("hint-size", { size: city.size }) },
-            { hint: translate("hint-image"), image: city.estimate_image }
+            { hint: translate("hint-image"), image: estimate_image }
         ];
     };
-    
+
     const revealHint = (hint: Hint, currentIndex: number) => {
         addHint(hint);
         setHints(prevHints => [...prevHints, hint]);
         setHintIndex(currentIndex + 1);
     };
-    
+
     const handleWrongCitySelect = () => {
         if (city) {
             const allHints = generateCityHints(city);
-    
+
             if (hintIndex < allHints.length) {
                 revealHint(allHints[hintIndex], hintIndex);
             }
             setPoints(prevPoints => prevPoints - 200);
         }
     };
-    
+
     const handleRightCitySelect = () => {
         if (city) {
             const cityLetters = city.name.split("");
             setRevealedLetters(cityLetters);
-    
+
             // Clear existing hints before revealing all hints for the correct city
             setHints([]);
             setHintIndex(0);
-    
+
             const allHints = generateCityHints(city);
-    
+
             allHints.forEach((hint, index) => {
                 revealHint(hint, index);
             });
         }
-    };
-
-    // Find image from preloaded images, if it does not exist return null
-    const findGameImage = (imagePath: string, images: Record<string, HTMLImageElement>) => {
-        for (const key in images) {
-            if (images[key].src.includes(imagePath)) {
-                return images[key];
-            }
-        }
-        return null;
     };
 
     const handleImageClick = () => {
