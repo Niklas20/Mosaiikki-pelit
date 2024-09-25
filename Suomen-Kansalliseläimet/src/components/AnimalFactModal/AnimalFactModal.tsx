@@ -1,4 +1,3 @@
-import React from 'react';
 import './AnimalFactModal.css';
 import { useLanguage } from '../../contexts/LanguageProvider';
 
@@ -23,8 +22,8 @@ interface AnimalFactModalProps {
 }
 
 const AnimalFactModal = ({ animal, onClose, preloadedImages }: AnimalFactModalProps) => {
-    const {language} = useLanguage();
-    
+    const { language } = useLanguage();
+
     if (!animal || !animal.fact || !animal.fact.en) {
         return null;
     }
