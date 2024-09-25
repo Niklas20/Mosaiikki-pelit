@@ -28,7 +28,7 @@ const AnimalFactModal = ({ animal, onClose, preloadedImages }: AnimalFactModalPr
         return null;
     }
 
-    const imageKey = `/src/imgs/game/${animal.image}`;
+    const imageKey = `${animal.image}`;
     const image = preloadedImages[imageKey];
 
     return (
