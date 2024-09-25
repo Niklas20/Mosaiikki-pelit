@@ -14,7 +14,10 @@ const GameScreen = (props: GameScreenProps) => {
 
     const location = useLocation();
     const spinnerType = location.state?.spinnerType as keyof typeof animalData;
-    const selectedAnimals = animalData[spinnerType];
+    const selectedAnimals = animalData[spinnerType].map(animal => ({
+        ...animal,
+        fact: animal.fact || { fi: "", en: "" }
+    }));
 
     const navigate = useNavigate();
     const translate = useTranslate();
