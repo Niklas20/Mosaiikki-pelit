@@ -1,5 +1,5 @@
 {
-  "name": "suomen-kansalliselaimet",
+  "name": "suomen-kansallissymbolit",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -7,7 +7,9 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "homepage": "https://gamesforchildren.online/games/lab/suomen-kansallissymbolit/",
+    "production": "vite build --base=./"
   },
   "dependencies": {
     "react": "^18.3.1",
