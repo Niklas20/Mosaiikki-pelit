@@ -107,9 +107,14 @@ const Spinner = ({ animals, preloadedImages }: SpinnerProps) => {
             name.innerText = getAnimalName(randomAnimal);
             item.appendChild(name);
 
-            const imageKey = `/src/imgs/game/${randomAnimal.image}`;
+            const imageKey = `${randomAnimal.image}`;
             const image = preloadedImages[imageKey];
-            item.style.backgroundImage = `url(${image.src})`;
+
+            if (!image) {
+                console.error(`Image not found for animal ${randomAnimal.name}`);
+            } else {
+                item.style.backgroundImage = `url(${image.src})`;
+            }
 
             items.appendChild(item);
             generatedList.push(randomAnimal);
@@ -160,9 +165,14 @@ const Spinner = ({ animals, preloadedImages }: SpinnerProps) => {
             name.innerText = getAnimalName(randomAnimal);
             item.appendChild(name);
 
-            const imageKey = `/src/imgs/game/${randomAnimal.image}`;
+            const imageKey = `${randomAnimal.image}`;
             const image = preloadedImages[imageKey];
-            item.style.backgroundImage = `url(${image.src})`;
+
+            if (!image) {
+                console.error(`Image not found for animal ${randomAnimal.name}`);
+            } else {
+                item.style.backgroundImage = `url(${image.src})`;
+            }
 
             items.appendChild(item);
             generatedList.push(randomAnimal);

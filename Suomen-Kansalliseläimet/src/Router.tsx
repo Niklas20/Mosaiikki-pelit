@@ -16,21 +16,45 @@ const Router = () => {
     const [preloadedImages, setPreloadedImages] = useState<Record<string, HTMLImageElement>>({});
 
     useEffect(() => {
-        const assetImages = import.meta.glob("/src/imgs/assets/*");
-        const buttonImages = import.meta.glob("/src/imgs/buttons/*");
-        const gameImages = import.meta.glob("/src/imgs/game/*");
+        const assetImages = import.meta.glob("/src/imgs/assets/*", { eager: true });
+        const buttonImages = import.meta.glob("/src/imgs/buttons/*", { eager: true });
+        const gameImages = import.meta.glob("/src/imgs/game/*", { eager: true });
 
-        const imageUrls = [...Object.keys(gameImages), ...Object.keys(assetImages), ...Object.keys(buttonImages)];
+        const imageMap: Record<string, string> = {};
+
+        Object.entries(gameImages).forEach(([path, image]) => {
+            const filename = path.split("/").pop();
+            imageMap[filename as string] = (image as any).default as string;
+        });
+
+        Object.entries(assetImages).forEach(([path, image]) => {
+            const filename = path.split("/").pop();
+            imageMap[filename as string] = (image as any).default as string;
+        });
+
+        Object.entries(buttonImages).forEach(([path, image]) => {
+            const filename = path.split("/").pop();
+            imageMap[filename as string] = (image as any).default as string;
+        });
+
+        const imageUrls = Object.values(imageMap);
+
+        console.log("Preloading images:", imageUrls);
 
         preloadImages(imageUrls, (percentage) => {
             setPercentageLoaded(percentage);
         })
             .then((images) => {
-                setPreloadedImages(images);
+                const preloadedImagesWithKeys: Record<string, HTMLImageElement> = {};
+                Object.keys(imageMap).forEach((fileName) => {
+                    preloadedImagesWithKeys[fileName] = images[imageMap[fileName]];
+                });
+
+                setPreloadedImages(preloadedImagesWithKeys);
                 setLoading(false);
             })
             .catch((error: Error) => {
-                console.error('Error preloading images:', error);
+                console.error("Error preloading images:", error);
             });
     }, []);
 
