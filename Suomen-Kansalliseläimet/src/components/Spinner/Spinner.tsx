@@ -32,8 +32,6 @@ const Spinner = ({ animals, preloadedImages }: SpinnerProps) => {
     const { language } = useLanguage();
     const navigate = useNavigate();
 
-    const feedback = feedbackKey ? translate(feedbackKey) : null;
-
     useEffect(() => {
         if (!initialItemsGenerated) {
             generateInitialItems();
@@ -240,7 +238,7 @@ const Spinner = ({ animals, preloadedImages }: SpinnerProps) => {
         const hasFact = selectedAnimal.fact && selectedAnimal.fact.en;
 
         if (isCorrectAnswer) {
-            setFeedbackKey(translate("spinner-correct"));
+            setFeedbackKey("spinner-correct");
             setShowConfetti(true);
             setTimeout(() => setShowConfetti(false), 3000);
             setPoints((prevPoints) => {
@@ -253,8 +251,6 @@ const Spinner = ({ animals, preloadedImages }: SpinnerProps) => {
                 }
                 return newPoints;
             });
-
-            // Only open the modal if the correct answer was selected and the animal has a fact
             if (hasFact) {
                 setIsModalOpen(true);
             }
@@ -270,7 +266,6 @@ const Spinner = ({ animals, preloadedImages }: SpinnerProps) => {
 
         setHasAnswered(true);
     };
-
 
     const handleSpinClick = () => {
         setIsRolling(true);
@@ -310,7 +305,7 @@ const Spinner = ({ animals, preloadedImages }: SpinnerProps) => {
                 </div>
             )}
 
-            {feedback && <p className="feedback-message">{feedback}</p>}
+            {feedbackKey && <p className="feedback-message">{translate(feedbackKey)}</p>}
 
             <ConfettiComponent showConfetti={showConfetti} />
         </div>
