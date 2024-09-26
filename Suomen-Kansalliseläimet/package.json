@@ -6,9 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
-    "lint": "eslint .",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "homepage": "https://gamesforchildren.online/games/lab/suomen-kansallissymbolit/",
     "production": "vite build --base=./"
   },
   "dependencies": {
