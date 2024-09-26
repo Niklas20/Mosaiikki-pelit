@@ -19,7 +19,6 @@ const Layout = () => {
     const { language, setLanguage } = useLanguage();
 
     const handleExitButtonClick = () => {
-        //resetGame();
         navigate("");
     }
 
@@ -36,6 +35,7 @@ const Layout = () => {
     };
 
     const isMainMenu = location.pathname === "/";
+    const isGameScreen = location.pathname === "/game";
 
     return (
         <div className="layout-container">
@@ -60,20 +60,20 @@ const Layout = () => {
                     </>
                 ) : (
                     <>
-                        <Tooltip text={translate("tooltip-motive")}>
-                            <Button
-                                className='motive-button'
-                                image={motiveButtonImage}
-                                onClick={handleMotiveButtonClick}
-                            //disabled={isGameOver}
-                            />
-                        </Tooltip>
+                        {!isGameScreen && (
+                            <Tooltip text={translate("tooltip-motive")}>
+                                <Button
+                                    className='motive-button'
+                                    image={motiveButtonImage}
+                                    onClick={handleMotiveButtonClick}
+                                />
+                            </Tooltip>
+                        )}
                         <Tooltip text={translate("tooltip-info")}>
                             <Button
                                 className='info-button'
                                 image={infoButtonImage}
                                 onClick={handleInfoButtonClick}
-                            //disabled={isGameOver}
                             />
                         </Tooltip>
                         <Tooltip text={translate("tooltip-exit")}>
@@ -81,7 +81,6 @@ const Layout = () => {
                                 className='exit-button'
                                 image={exitButtonImage}
                                 onClick={handleExitButtonClick}
-                            //disabled={isGameOver}
                             />
                         </Tooltip>
                         <Tooltip text={translate("tooltip-language-fi")}>
@@ -89,7 +88,6 @@ const Layout = () => {
                                 className="language-button-fi"
                                 image={languageButtonFi}
                                 onClick={() => handleLanguageChange("fi")}
-                            //disabled={isGameOver}
                             />
                         </Tooltip>
                         <Tooltip text={translate("tooltip-language-en")}>
@@ -97,7 +95,6 @@ const Layout = () => {
                                 className="language-button-en"
                                 image={languageButtonEn}
                                 onClick={() => handleLanguageChange("en")}
-                            //disabled={isGameOver}
                             />
                         </Tooltip>
                     </>

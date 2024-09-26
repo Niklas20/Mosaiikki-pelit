@@ -13,7 +13,7 @@
 {
     visibility: hidden;
     color: #fff;
-    background: linear-gradient(90deg, #00bfae, #00aaff, #0052cc);
+    background: linear-gradient(90deg, #ff6600, #ffb366);
     border-radius: 4px;
     padding: 10px;
     position: absolute;
@@ -46,5 +46,5 @@
     transform: translateX(-50%);
     border-width: 8px;
     border-style: solid;
-    border-color: transparent transparent #00bfae transparent;
+    border-color: transparent transparent #ff6600 transparent;
 }
